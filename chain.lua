@@ -1,38 +1,38 @@
-local P = game:GetService("Players")
-local RS = game:GetService("RunService")
-local L = game:GetService("Lighting")
-local W = game:GetService("Workspace")
-local CG = game:GetService("CoreGui")
-local Cam = W.CurrentCamera
-local lp = P.LocalPlayer
+当地的当地的)
+当地的Rs=游戏：GetService("运行服务")
+当地的L=游戏：GetService("照明")
+当地的W=游戏：GetService("工作区")
+当地的CG=游戏：GetService("CoreGui")
+当地的Cam=W.CurrentCamera
+当地的LP=P.LocalPlayer
 
-local SansHub = loadstring(game:HttpGet("https://sanshub.cloud/raw/NL/web_loader.luau"))()
-local UILib, Mod = SansHub:Load()
-local Logger = UILib:CreateLogger()
+当地的ZY=荷载串(游戏：HttpGet("https://sanshub.cloud/raw/NL/web_loader.luau"))()
+本地的UILib，Mod=zy:Load()
+当地的记录器=UILib:CreateLogger()
 
-local notifySound = Instance.new("Sound")
-notifySound.SoundId = "rbxassetid://6895079853"
-notifySound.Volume = 3
-notifySound.PlayOnRemove = false
-notifySound.Parent = CG
+当地的notifySound=Instance.new("声音")
+notifySound.SoundId="rbxassetid://6895079853"
+notifySound.Volume=3
+notifySound.PlayOnRemove=假的
+notifySound.Parent=CG
 
-local errorSound = Instance.new("Sound")
-errorSound.SoundId = "rbxassetid://7116952708"
-errorSound.Volume = 3
-errorSound.PlayOnRemove = false
-errorSound.Parent = CG
+当地的errorSound=Instance.new("声音")
+errorSound.SoundId="rbxassetid://7116952708"
+errorSound.Volume=3
+errorSound.PlayOnRemove=假的
+errorSound.Parent=CG
 
-local function Notify(icon, msg, dur, color)
-    Logger.new(icon, msg, dur or 2, color)
-    pcall(function() notifySound:Play() end)
-end
+当地的功能通知(图标、消息、持续时间、颜色)
+Logger.new(图标、消息、时间或2，颜色)
+pcall(功能()notifySound:Play()结束)
+结束
 
-local valuesFolder = W:WaitForChild("GameStuff"):WaitForChild("Values")
-local aiFolder = W:WaitForChild("Misc"):WaitForChild("AI")
+本地的valuesFolder=W:WaitForChild("GameStuff")：WaitForChild("值")
+本地的aiFolder=W:WaitForChild("杂项")：WaitForChild("AI")
 
-local ESPFolder = Instance.new("Folder")
-ESPFolder.Name = "SansHubESP"
-ESPFolder.Parent = CG
+当地的 ESPFolder = Instance.new("文件夹")
+ESPFolder.Name="SansHubESP"
+ESPFolder.Parent=CG
 
 local ESPList = {}
 
