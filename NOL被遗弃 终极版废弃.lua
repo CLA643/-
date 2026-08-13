@@ -1883,8 +1883,6 @@ HighlightSettings.SurvivorColors = {
     ["白色"] = Color3.fromRGB(255, 255, 255),
     ["紫色"] = Color3.fromRGB(128, 0, 128),
     ["青色"] = Color3.fromRGB(0, 255, 255),
-    ["橙色"] = Color3.fromRGB(255, 165, 0),
-    ["柠檬绿"] = Color3.fromRGB(173, 255, 47)  -- 新增柠檬绿
 }
 
 HighlightSettings.KillerColors = {
