@@ -30,8 +30,8 @@ local currentThemeIndex = 1
 local Window = WindUI:CreateWindow({
     Title = "<font color='#FFFFFF'>X</font><font color='#CCCCCC'>I</font><font color='#999999'>A</font><font color='#666666'>O</font><font color='#444444'>X</font><font color='#333333'>I</font> <font color='#666666'>S</font><font color='#444444'>C</font><font color='#222222'>R</font><font color='#111111'>I</font><font color='#000000'>P</font><font color='#000000'>T</font><font color='#FFAEC4'></font>",
     IconTransparency = 1,
-    Author = "by小西",
-    Folder = "XIAOXI",
+    Author = "zy",
+    Folder = "ZiYang",
     Size = UDim2.fromOffset(700, 500),
     Transparent = true,
     Theme = "Dark",
@@ -43,7 +43,7 @@ local Window = WindUI:CreateWindow({
 })
 
 Window:Tag({
-        Title = "付费版",
+        Title = "免费版",
         Radius = 10,
         Color = Color3.fromHex("#ffffff"),
     })
@@ -223,8 +223,8 @@ local Tabs = {
 
 -- ==================== 主页内容 ====================
 Tabs.Main:Paragraph({
-    Title = "欢迎使用XIAIXI赛马娘",
-    Desc = "作者：小西｜ UI提供：鱼腥草｜赛马娘\n版本：v1.0.0\n\n本人亲自制作",
+    Title = "欢迎使用ZiYang赛马娘",
+    Desc = "作者：zy｜ UI提供：zy｜赛马娘\n版本：v1.0.0\n\n本人亲自制作",
     ImageSize = 50,
     Thumbnail = "https://raw.githubusercontent.com/xiaoxi9008/chesksks/refs/heads/main/1357873301.jpg",
     ThumbnailSize = 170
@@ -238,7 +238,7 @@ Tabs.Main:Button({
     Callback = function()
         WindUI:Notify({
             Title = "欢迎!",
-            Content = "感谢使用XIAOXI",
+            Content = "感谢使用ZiYang",
             Icon = "heart",
             Duration = 3
         })
@@ -672,7 +672,7 @@ end
 local aboutSection = Tabs.Config:Section({ Title = "关于" })
 aboutSection:Paragraph({
     Title = "群号",
-    Desc = "\n作者：by小西\n\n赛马娘 v1.0.0",
+    Desc = "\n作者：zy子杨\n\n赛马娘 v1.0.0",
     Image = "🐧",
     ImageSize = 20,
     Color = "Grey",
@@ -682,7 +682,7 @@ aboutSection:Paragraph({
             Icon = "copy",
             Variant = "Tertiary",
             Callback = function()
-                setclipboard("点击链接加入群聊【XIAOXI HUB新主群 [ 联邦 ]】：https://qun.qq.com/universal-share/share?ac=1&authKey=uxronKi8Dwy0M%2BHPaFABKnzV8WyrSFglO3Of1XoiXRiLAPhBjUsMtdNH9v8jtzfN&busi_data=eyJncm91cENvZGUiOiI1OTA2NDI0MjciLCJ0b2tlbiI6IjA1RGVNUVNmVGRaYXRtcHhCdGtjUTVuMjljbm1DYlc3TUFHYmZMTmJsUDFXTW9YcXREbDdtakdRdGsxTWpHa1EiLCJ1aW4iOiIzNTc0NzY5NDE1In0%3D&data=Al4_C1ij3U2uuYGj_vrlBtLmLlYlshk79tTG094L7oiov3r5WBW8KV_BKUQBiEzRttVcPVGPi0PIdXFtKmyomw&svctype=4&tempid=h5_group_info")
+                setclipboard("点击链接加入群聊)
                 WindUI:Notify({
                     Title = "已复制!",
                     Content = "qq主群链接已复制到剪贴板",
