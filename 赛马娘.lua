@@ -682,7 +682,7 @@ aboutSection:Paragraph({
             Icon = "copy",
             Variant = "Tertiary",
             Callback = function()
-                setclipboard("点击链接加入群聊")
+                setclipboard("点击链接加入群聊"))
                 WindUI:Notify({
                     Title = "已复制!",
                     Content = "qq主群链接已复制到剪贴板",
