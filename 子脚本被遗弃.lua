@@ -3,7 +3,7 @@
 --  原脚本: zy | 迁移: WindUI
 -- ==========================================
 
-local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
+local WindUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/Footagesus/WindUI/main/main.lua"))()
 
 local Window = WindUI:CreateWindow({
     Title = "子脚本┃被遗弃",
