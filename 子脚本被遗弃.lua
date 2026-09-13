@@ -1,6 +1,6 @@
 -- ==========================================
 --  被遗弃脚本 - WindUI版
---  原脚本: 宇星辰 | 迁移: WindUI
+--  原脚本: zy | 迁移: WindUI
 -- ==========================================
 
 local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
