@@ -111,7 +111,7 @@ local function fn2()
 		response = game:HttpGet("https://raw.githubusercontent.com/platinww/CrustyMain/refs/heads/main/universal/ftgs.lua")
 	end)
 
-	if not response or response == "" or response:match("404: Not Found") then
+	if not response or response == "" or response:match("404: 未找到") then
 		local request_ = request or http_request or syn and syn.request or fluxus and fluxus.request
 
 		if request_ then
@@ -121,7 +121,7 @@ local function fn2()
 					Method = "GET",
 				})
 
-				if v3 and v3.Success and v3.Body and v3.Body ~= "" and not v3.Body:match("404: Not Found") then
+				if v3 and v3.Success and v3.Body and v3.Body ~= "" and not v3.Body:match("404: 未找到") then
 					response = v3.Body
 				end
 			end)
@@ -256,7 +256,7 @@ local function fn5(arg)
 		local furinaBgImage = background:FindFirstChild("FurinaBgImage")
 
 		if arg then
-			tbl.CurrentThemeName = "Furina Genshin"
+			tbl.CurrentThemeNameName = "Furina Genshin"
 
 			if ruzAnimConn then
 				pcall(function()
@@ -348,7 +348,7 @@ local function fn7(arg)
 		end
 
 		if arg then
-			tbl.CurrentThemeName = "Closing Eyes"
+			tbl.CurrentThemeNameName = "Closing Eyes"
 			local furinaBgImage = background:FindFirstChild("FurinaBgImage")
 
 			if furinaBgImage then
@@ -441,7 +441,7 @@ local function fn7(arg)
 end
 
 pcall(function()
-	if v and v.AddTheme then
+	if v and v.Add主题 then
 		v:AddTheme({
 			Name = "Cyberpunk",
 			Accent = Color3.fromHex("#ff0055"),
@@ -664,15 +664,15 @@ local function fn11()
 	local color = Color3.fromHex
 
 	v2 = v:CreateWindow({
-		Title = "Uwu Hub | Ink Game",
+		Title = "zy | Ink Game",
 		Icon = "bird",
 		Folder = "UwuHub",
 		ToggleKey = Enum.KeyCode.G,
 		Size = UDim2.fromOffset(650, 480),
 		Transparent = false,
 		Background = "",
-		Theme = str,
-		Author = "discord.gg/uwustudios",
+		主题 = str,
+		Author = "zy",
 		User = {
 			Enabled = true,
 			Callback = function()
@@ -680,7 +680,7 @@ local function fn11()
 			Anonymous = false,
 		},
 		OpenButton = {
-			Title = "Uwu Hub",
+			Title = "zy",
 			CornerRadius = UDim.new(1, 0),
 			StrokeThickness = 3,
 			Enabled = true,
@@ -716,16 +716,16 @@ local function fn11()
 						main = main:FindFirstChild("Background") or main
 					end
 
-					local currentThemeName = tbl.CurrentThemeName
-					local currentTheme
+					local CurrentThemeNameName = tbl.CurrentThemeNameName
+					local CurrentThemeName
 
-					if currentThemeName then
-						currentTheme = currentThemeName
+					if CurrentThemeNameName then
+						CurrentThemeName = CurrentThemeNameName
 					else
-						currentTheme = v and v.GetCurrentTheme and v:GetCurrentTheme()
+						CurrentThemeName = v and v.GetCurrentThemeName and v:GetCurrentThemeName()
 					end
 
-					local str3 = currentTheme or str or "Dark"
+					local str3 = CurrentThemeName or str or "Dark"
 					local flag3 = str3 == "Furina Genshin"
 					local visible = str3 == "Closing Eyes"
 					local furinaBgImage = main and main:FindFirstChild("FurinaBgImage")
@@ -940,26 +940,26 @@ local function fn11()
 	local tbl6
 
 	tbl6 = {
-		RLGL = v2:Tab({ Title = "Red Light Green Light", Icon = "traffic-cone" }),
-		Dalgona = v2:Tab({ Title = "Dalgona & Pentathlon", Icon = "cookie" }),
-		LightsOut = v2:Tab({ Title = "Lights Out", Icon = "moon" }),
-		HSTOW = v2:Tab({ Title = "Hide And Seek & Tug Of War", Icon = "eye" }),
-		MingleGlass = v2:Tab({ Title = "Jump Rope & Glass Bridge", Icon = "swords" }),
+		RLGL = v2:Tab({ Title = "红绿灯", Icon = "traffic-cone" }),
+		Dalgona = v2:Tab({ Title = "糖饼与五项", Icon = "cookie" }),
+		LightsOut = v2:Tab({ Title = "熄灯", Icon = "moon" }),
+		HSTOW = v2:Tab({ Title = "捉迷藏与拔河", Icon = "eye" }),
+		MingleGlass = v2:Tab({ Title = "跳绳与玻璃桥", Icon = "swords" }),
 		Mingle = v2:Tab({ Title = "Mingle", Icon = "users" }),
-		Rebel = v2:Tab({ Title = "Rebel", Icon = "target" }),
-		Sky = v2:Tab({ Title = "Sky & Squid Game", Icon = "cloud" }),
-		Guard = v2:Tab({ Title = "Guard Mode", Icon = "shield" }),
-		Combat = v2:Tab({ Title = "Combat", Icon = "swords" }),
-		Tools = v2:Tab({ Title = "Tools", Icon = "wrench" }),
-		Utilities = v2:Tab({ Title = "Utilities", Icon = "wrench" }),
-		Visual = v2:Tab({ Title = "Visual", Icon = "eye" }),
-		UISettings = v2:Tab({ Title = "UI Settings", Icon = "settings" }),
+		Rebel = v2:Tab({ Title = "叛军", Icon = "target" }),
+		Sky = v2:Tab({ Title = "天空与鱿鱼游戏", Icon = "cloud" }),
+		CanKill = v2:Tab({ Title = "CanKill模式", Icon = "shield" }),
+		战斗 = v2:Tab({ Title = "战斗", Icon = "swords" }),
+		Tools = v2:Tab({ Title = "工具", Icon = "wrench" }),
+		实用工具 = v2:Tab({ Title = "实用工具", Icon = "wrench" }),
+		Visual = v2:Tab({ Title = "视觉", Icon = "eye" }),
+		UISettings = v2:Tab({ Title = "界面设置", Icon = "settings" }),
 	}
 
 	local tbl7
 
 	tbl7 = {
-		InfoBox = tbl6.UISettings:Section({ Opened = true, Title = "| Uwu Hub Information", Icon = "info" }),
+		InfoBox = tbl6.UISettings:Section({ Opened = true, Title = "| zy墨水游戏 信息", Icon = "info" }),
 	}
 
 	do
@@ -969,14 +969,14 @@ local function fn11()
 			infoBox:Divider()
 
 			infoBox:Paragraph({
-				Title = "Game Version",
+				Title = "游戏版本",
 				Desc = "<font color=\"#A5B4FC\"><b>" .. tostring(game.PlaceVersion) .. "</b></font>",
 			})
 
 			infoBox:Divider()
 
 			infoBox:Paragraph({
-				Title = "Last Checked",
+				Title = "最后检查",
 				Desc = "<font color=\"#A5B4FC\"><b>" .. tostring(n) .. "</b></font>",
 			})
 
@@ -986,13 +986,13 @@ local function fn11()
 
 				infoBox:Paragraph({
 					Title = "<font color=\"#F87171\"><b>WARNING</b></font>",
-					Desc = "<font color=\"#FCCCA7\">Game Version Change Detected Features may be patched.</font>",
+					Desc = "<font color=\"#FCCCA7\">游戏版本 Change Detected Features may be patched.</font>",
 				})
 			end
 		end
 
 		infoBox:Space()
-		infoBox:Section({ Opened = true, Title = "<font color=\"#FBBF24\"><b>Latest Update Logs:</b></font>" })
+		infoBox:Section({ Opened = true, Title = "<font color=\"#FBBF24\"><b>最新更新日志:</b></font>" })
 		local str3 = "Failed to fetch logs..."
 
 		pcall(function()
@@ -1029,16 +1029,16 @@ local function fn11()
 		end)
 
 		infoBox:Divider()
-		infoBox:Paragraph({ Title = "Latest Update Logs:", Desc = str3 })
+		infoBox:Paragraph({ Title = "最新更新日志:", Desc = str3 })
 	end
 
-	local fn12
+	local isCurrentGame
 
-	do
-		local value = nil
-		local n2 = 0
+do
+	local value = nil
+	local n2 = 0
 
-		local function fn13()
+	local function fn13()
 			if tick() - n2 < 0.5 then
 				return value
 			end
@@ -1054,10 +1054,9 @@ local function fn11()
 
 			return value
 		end
-
-		fn12 = function(arg)
-			return fn13() == arg
-		end
+      isCurrentGame = function(arg)
+	   return fn13() == arg
+     end
 	end
 
 	local fn13
@@ -1081,7 +1080,7 @@ local function fn11()
 	fn13 = function(arg, arg2)
     pcall(function()
         game.StarterGui:SetCore("SendNotification", {
-            Title = arg or "Uwu Hub",
+            Title = arg or "zy",
             Text = arg2 or "",
             Duration = 4
         })
@@ -1208,13 +1207,13 @@ end
 		if not guid then
 			return false
 		end
-		local pentathlonRemote = game:GetService("ReplicatedStorage"):FindFirstChild("Remotes") and game:GetService("ReplicatedStorage").Remotes:FindFirstChild("PentathlonRemote")
+		local PentathlonRemote = game:GetService("ReplicatedStorage"):FindFirstChild("Remotes") and game:GetService("ReplicatedStorage").Remotes:FindFirstChild("PentathlonRemote")
 
-		if pentathlonRemote then
+		if PentathlonRemote then
 			if arg2 then
-				pentathlonRemote:FireServer(guid, arg, arg2)
+				PentathlonRemote:FireServer(guid, arg, arg2)
 			else
-				pentathlonRemote:FireServer(guid, arg)
+				PentathlonRemote:FireServer(guid, arg)
 			end
 
 			return true
@@ -1241,53 +1240,53 @@ end
 	end
 
 	tbl3.lastTPTime = 0
-	tbl7.RLGLBox = tbl6.RLGL:Section({ Opened = true, Title = "| Red Light Green Light", Icon = "hand" })
+	tbl7.RLGLBox = tbl6.RLGL:Section({ Opened = true, Title = "| 红绿灯", Icon = "hand" })
 
 	tbl7.RLGLBox:Button({
-		Title = "TP To End",
+		Title = "传送到终点",
 		Callback = function()
 			local lastTPTime = tbl3.lastTPTime
 
 			if tick() - lastTPTime < 10 then
 				local lastTPTime2 = tbl3.lastTPTime
-				fn13(" Cooldown", "Please wait " .. math.ceil(10 - tick() - lastTPTime2) .. "s before teleporting again.")
+				fn13(" 冷却", "请等待 " .. math.ceil(10 - tick() - lastTPTime2) .. "秒后再传送")
 				return
 			end
 
-			if fn12("RedLightGreenLight") then
+			if isCurrentGame("RedLightGreenLight") then
 				fn17(CFrame.new(-45, 1025, 137))
 				tbl3.lastTPTime = tick()
 			else
-				fn13(nil, "Red Light Green Light is not currently running.")
+				fn13(nil, "红绿灯游戏未运行")
 			end
 		end,
 	})
 
 	tbl7.RLGLBox:Button({
-		Title = "TP To Start",
+		Title = "传送到起点",
 		Callback = function()
 			local lastTPTime = tbl3.lastTPTime
 
 			if tick() - lastTPTime < 10 then
 				local lastTPTime2 = tbl3.lastTPTime
-				fn13(" Cooldown", "Please wait " .. math.ceil(10 - tick() - lastTPTime2) .. "s before teleporting again.")
+				fn13(" 冷却", "请等待 " .. math.ceil(10 - tick() - lastTPTime2) .. "秒后再传送")
 				return
 			end
 
-			if fn12("RedLightGreenLight") then
+			if isCurrentGame("RedLightGreenLight") then
 				fn17(CFrame.new(-49, 1023, -540))
 				tbl3.lastTPTime = tick()
 			else
-				fn13(nil, "Red Light Green Light is not currently running.")
+				fn13(nil, "红绿灯游戏未运行")
 			end
 		end,
 	})
 
 	tbl7.RLGLBox:Button({
-		Title = "Remove Injury",
+		Title = "移除受伤",
 		Callback = function()
-			if not fn12("RedLightGreenLight") then
-				fn13(nil, "Red Light Green Light is not currently running.")
+			if not isCurrentGame("RedLightGreenLight") then
+				fn13(nil, "红绿灯游戏未运行")
 				return
 			end
 
@@ -1372,16 +1371,16 @@ end
 	})
 
 	tbl7.RLGLBox:Button({
-		Title = "Anti Crawl",
+		Title = "防爬行",
 		Callback = function()
-			if not fn12("RedLightGreenLight") then
-				fn13(nil, "Red Light Green Light is not currently running.")
+			if not isCurrentGame("RedLightGreenLight") then
+				fn13(nil, "红绿灯游戏未运行")
 				return
 			end
-			fn13(nil, "Anti Crawl Enabled")
+			fn13(nil, "防爬行已启用")
 
 			task.spawn(function()
-				while fn12("RedLightGreenLight") do
+				while isCurrentGame("RedLightGreenLight") do
 					local character = localPlayer.Character
 
 					if character and character:FindFirstChild("Crawling") then
@@ -1440,7 +1439,7 @@ end
 		local flag3 = false
 
 		tbl7.RLGLBox:Toggle({
-			Title = "Freeze On Red Light",
+			Title = "红灯时冻结",
 			Default = false,
 			Callback = function(autoStopEnabled)
 				tbl.autoStopEnabled = autoStopEnabled
@@ -1453,7 +1452,7 @@ end
 
 					task.spawn(function()
 						while tbl2.freezeThread and tbl.autoStopEnabled do
-							if not fn12("RedLightGreenLight") then
+							if not isCurrentGame("RedLightGreenLight") then
 								if flag3 then
 									fn18(true)
 									flag3 = false
@@ -1537,7 +1536,7 @@ end
 
 				task.spawn(function()
 					while tbl2.autoTPEndThread and tbl.autoTPEndEnabled do
-						if fn12("RedLightGreenLight") then
+						if isCurrentGame("RedLightGreenLight") then
 							local attribute = workspace:GetAttribute("CurrentGameTime")
 
 							if attribute then
@@ -1562,7 +1561,7 @@ end
 									end
 
 									if flag3 then
-										fn13(nil, "Last 3 Second Left Teleporting End")
+										fn13(nil, "最后3秒传送终点")
 										fn17(CFrame.new(-45, 1025, 137))
 									end
 
@@ -1675,17 +1674,17 @@ end
 		tbl7.HSTOWBox = tbl6.HSTOW:Section({ Opened = true, Title = "| Hide And Seek", Icon = "search" })
 
 		tbl7.HSTOWBox:Button({
-			Title = "Auto Escape",
+			Title = "自动逃离",
 			Callback = function()
-				if not fn12("HideAndSeek") then
-					fn13(nil, "Hide And Seek is not active")
+				if not isCurrentGame("HideAndSeek") then
+					fn13(nil, "捉迷藏未开始")
 					return
 				end
 				local character = localPlayer.Character
 
 				if character and character:FindFirstChild("HumanoidRootPart") then
 					fn17(CFrame.new(199, 54, -88))
-					fn13(" Escaped", "Teleported to safe zone")
+					fn13(" 已逃离", "已传送到安全区")
 				end
 			end,
 		})
@@ -1709,7 +1708,7 @@ end
 						local tbl11 = { "Circle", "Square", "Triangle" }
 
 						while tbl.autoGetKeysEnabled and tbl2.autoGetKeysThread do
-							if fn12("HideAndSeek") then
+							if isCurrentGame("HideAndSeek") then
 								local currentKeys = localPlayer:FindFirstChild("CurrentKeys")
 
 								if currentKeys then
@@ -1897,7 +1896,7 @@ end
 					return
 				end
 
-				if not fn12("TugOfWar") then
+				if not isCurrentGame("TugOfWar") then
 					fn24()
 					return
 				end
@@ -1936,7 +1935,7 @@ end
 			end)
 
 			task.spawn(function()
-				while flag3 and (tbl.tugOfWarAutoPullEnabled or tbl.tugOfWarPullHelperEnabled) and fn12("TugOfWar") do
+				while flag3 and (tbl.tugOfWarAutoPullEnabled or tbl.tugOfWarPullHelperEnabled) and isCurrentGame("TugOfWar") do
 					task.wait(1)
 				end
 
@@ -2004,14 +2003,14 @@ end
 		end
 
 		tbl7.HSTOWBox:Toggle({
-			Title = "Auto Kill Hiders",
+			Title = "自动击杀躲藏者",
 			Default = false,
 			Callback = function(killHidersEnabled)
 				tbl.killHidersEnabled = killHidersEnabled
 
 				if tbl.killHidersEnabled then
 					if not localPlayer:GetAttribute("IsHunter") then
-						fn13(" Not Hunter", "You are not a Hunter.")
+						fn13(" 不是猎人", "你不是猎人")
 						tbl.killHidersEnabled = false
 						return
 					end
@@ -2026,7 +2025,7 @@ end
 
 						while true do
 							if tbl2.killThread and tbl.killHidersEnabled then
-								if not fn12("HideAndSeek") then
+								if not isCurrentGame("HideAndSeek") then
 									task.wait(1)
 									task.wait(0.1)
 									continue
@@ -2060,7 +2059,7 @@ end
 											flag4 = false
 
 											if flag5 then
-												if fn12("HideAndSeek") then
+												if isCurrentGame("HideAndSeek") then
 													local character2 = localPlayer.Character
 													local humanoidRootPart2 = character2 and character2:FindFirstChild("HumanoidRootPart")
 													local humanoid2 = character2 and character2:FindFirstChild("Humanoid")
@@ -2119,7 +2118,7 @@ end
 		tbl2.infiniteStaminaThread = nil
 
 		tbl7.HSTOWBox:Toggle({
-			Title = "Infinite Stamina",
+			Title = "无限体力",
 			Default = false,
 			Callback = function(infiniteStaminaEnabled)
 				tbl.infiniteStaminaEnabled = infiniteStaminaEnabled
@@ -2130,7 +2129,7 @@ end
 					end
 
 					tbl2.infiniteStaminaThread = game:GetService("RunService").RenderStepped:Connect(function()
-						if fn12("HideAndSeek") then
+						if isCurrentGame("HideAndSeek") then
 							local character = localPlayer.Character
 
 							if character then
@@ -2155,7 +2154,7 @@ end
 		local tbl12 = {}
 
 		local function fn26()
-			if fn12("RedLightGreenLight") then
+			if isCurrentGame("RedLightGreenLight") then
 				local playerGui = localPlayer:FindFirstChild("PlayerGui")
 
 				if playerGui then
@@ -2277,7 +2276,7 @@ end
 			while true do
 				task.wait(0.5)
 
-				if tbl.autoPopBalloonsEnabled and fn12("HideAndSeek") then
+				if tbl.autoPopBalloonsEnabled and isCurrentGame("HideAndSeek") then
 					for k in pairs(tbl11) do
 						if fn26() then
 							break
@@ -2308,10 +2307,10 @@ end
 			end
 		end)
 
-		tbl7.GameToolsBox = tbl6.Tools:Section({ Opened = true, Title = "| Game Tools", Icon = "hammer" })
+		tbl7.GameToolsBox = tbl6.Tools:Section({ Opened = true, Title = "| 游戏工具", Icon = "hammer" })
 
 		tbl7.HSTOWBox:Toggle({
-			Title = "Balloon Pop Farm",
+			Title = "气球农场",
 			Default = false,
 			Callback = function(autoPopBalloonsEnabled)
 				tbl.autoPopBalloonsEnabled = autoPopBalloonsEnabled
@@ -2322,7 +2321,7 @@ end
 		tbl2.hideAndSeekQTEThread = nil
 
 		tbl7.HSTOWBox:Toggle({
-			Title = "Auto QTE Event",
+			Title = "自动QTE事件",
 			Default = false,
 			Callback = function(hideAndSeekAutoQTEEnabled)
 				tbl.hideAndSeekAutoQTEEnabled = hideAndSeekAutoQTEEnabled
@@ -2332,7 +2331,7 @@ end
 						local tbl13 = {}
 
 						while tbl.hideAndSeekAutoQTEEnabled do
-							if fn12("HideAndSeek") then
+							if isCurrentGame("HideAndSeek") then
 								local v5 = fn15()
 
 								if v5 and v5.ActiveButtons then
@@ -2342,7 +2341,7 @@ end
 										if activeButton then
 											tbl13[k] = true
 
-											if tbl.hideAndSeekAutoQTEEnabled and fn12("HideAndSeek") and v5.ActiveButtons and v5.ActiveButtons[k] then
+											if tbl.hideAndSeekAutoQTEEnabled and isCurrentGame("HideAndSeek") and v5.ActiveButtons and v5.ActiveButtons[k] then
 												pcall(function()
 													v5.Pressed(false, v5.ActiveButtons[k])
 												end)
@@ -2370,7 +2369,7 @@ end
 		})
 
 		tbl7.HSTOWBox:Toggle({
-			Title = "Anti Spike",
+			Title = "防尖刺",
 			Default = false,
 			Callback = function(antiSpikeEnabled)
 				_G.AntiSpikeEnabled = antiSpikeEnabled
@@ -2453,7 +2452,7 @@ end
 							end
 
 							local connection2 = workspace.DescendantAdded:Connect(function(descendant)
-								if _G.AntiSpikeEnabled and fn12("HideAndSeek") then
+								if _G.AntiSpikeEnabled and isCurrentGame("HideAndSeek") then
 									fn31(descendant)
 								end
 							end)
@@ -2461,7 +2460,7 @@ end
 							local flag4 = false
 
 							while _G.AntiSpikeThread do
-								local HideAndSeek = _G.AntiSpikeEnabled and fn12("HideAndSeek")
+								local HideAndSeek = _G.AntiSpikeEnabled and isCurrentGame("HideAndSeek")
 
 								if HideAndSeek and not flag4 then
 									fn32()
@@ -2540,7 +2539,7 @@ end
 		local n2 = 0
 
 		local function fn32(arg, arg2)
-			if not tbl.autoDodgeEnabled or not fn12("HideAndSeek") then
+			if not tbl.autoDodgeEnabled or not isCurrentGame("HideAndSeek") then
 				return
 			end
 
@@ -2747,7 +2746,7 @@ end
 		end
 
 		tbl7.HSTOWBox:Toggle({
-			Title = "Auto Dodge",
+			Title = "自动闪避",
 			Default = false,
 			Callback = function(autoDodgeEnabled)
 				tbl.autoDodgeEnabled = autoDodgeEnabled
@@ -2764,7 +2763,7 @@ end
 		})
 
 		tbl7.HSTOWBox:Toggle({
-			Title = "ESP Roles",
+			Title = "透视阵营",
 			Default = false,
 			Callback = function(espRolesEnabled)
 				tbl.espRolesEnabled = espRolesEnabled
@@ -2811,7 +2810,7 @@ end
 		end
 
 		tbl7.HSTOWBox:Toggle({
-			Title = "ESP Exit Doors",
+			Title = "透视出口门",
 			Default = false,
 			Callback = function(espExitDoorsEnabled)
 				tbl.espExitDoorsEnabled = espExitDoorsEnabled
@@ -2824,7 +2823,7 @@ end
 
 					task.spawn(function()
 						while tbl.espExitDoorsEnabled and tbl2.espExitDoorsThread do
-							if fn12("HideAndSeek") then
+							if isCurrentGame("HideAndSeek") then
 								local hideAndSeekMap = workspace:FindFirstChild("HideAndSeekMap")
 								hideAndSeekMap = hideAndSeekMap and hideAndSeekMap:FindFirstChild("NEWFIXEDDOORS")
 								hideAndSeekMap = hideAndSeekMap and hideAndSeekMap:FindFirstChild("Floor1")
@@ -2876,7 +2875,7 @@ end
 		end
 
 		tbl7.HSTOWBox:Toggle({
-			Title = "ESP Keys",
+			Title = "透视钥匙",
 			Default = false,
 			Callback = function(espKeysEnabled)
 				tbl.espKeysEnabled = espKeysEnabled
@@ -2889,7 +2888,7 @@ end
 
 					task.spawn(function()
 						while tbl.espKeysEnabled and tbl2.espKeysThread do
-							if fn12("HideAndSeek") then
+							if isCurrentGame("HideAndSeek") then
 								local effects = workspace:FindFirstChild("Effects")
 
 								if effects then
@@ -2949,7 +2948,7 @@ end
 
 				task.spawn(function()
 					while tbl.tugOfWarAutoPullEnabled or tbl.tugOfWarPullHelperEnabled do
-						if fn12("TugOfWar") then
+						if isCurrentGame("TugOfWar") then
 							pcall(fn23)
 						end
 
@@ -2966,7 +2965,7 @@ end
 		tbl7.TugBox = tbl6.HSTOW:Section({ Opened = true, Title = "| Tug Of War", Icon = "anchor" })
 
 		tbl7.TugBox:Toggle({
-			Title = "Auto Pull",
+			Title = "自动拉",
 			Default = false,
 			Callback = function(tugOfWarAutoPullEnabled)
 				tbl.tugOfWarAutoPullEnabled = tugOfWarAutoPullEnabled
@@ -2975,7 +2974,7 @@ end
 		})
 
 		tbl7.TugBox:Toggle({
-			Title = "Pull Helper",
+			Title = "拉绳辅助",
 			Default = false,
 			Callback = function(tugOfWarPullHelperEnabled)
 				tbl.tugOfWarPullHelperEnabled = tugOfWarPullHelperEnabled
@@ -3022,7 +3021,7 @@ end
 		end
 
 		tbl7.MingleBox:Toggle({
-			Title = "Noclip Doors",
+			Title = "穿门",
 			Default = false,
 			Callback = function(arg)
 				if connection2 then
@@ -3042,14 +3041,14 @@ end
 				end
 
 				if arg then
-					if fn12("Mingle") then
+					if isCurrentGame("Mingle") then
 						fn18(true)
 					end
 
 					connection3 = localPlayer.CharacterAdded:Connect(function()
 						task.wait(0.3)
 
-						if fn12("Mingle") then
+						if isCurrentGame("Mingle") then
 							fn18(true)
 						end
 					end)
@@ -3057,7 +3056,7 @@ end
 					local n2 = 0
 
 					connection2 = RunService.Heartbeat:Connect(function()
-						if not fn12("Mingle") then
+						if not isCurrentGame("Mingle") then
 							return
 						end
 						local now = tick()
@@ -3131,7 +3130,7 @@ end
 		end
 
 		tbl7.MingleBox:Toggle({
-			Title = "Auto Close Door",
+			Title = "自动关门",
 			Default = false,
 			Callback = function(arg)
 				if connection4 then
@@ -3148,7 +3147,7 @@ end
 					local n2 = 0
 
 					connection4 = RunService.Heartbeat:Connect(function()
-						if not fn12("Mingle") then
+						if not isCurrentGame("Mingle") then
 							return
 						end
 						local now = tick()
@@ -3179,7 +3178,7 @@ end
 		})
 
 		tbl7.MingleBox:Toggle({
-			Title = "Auto QTE Event",
+			Title = "自动QTE事件",
 			Default = false,
 			Callback = function(autoQTEEnabled)
 				tbl.autoQTEEnabled = autoQTEEnabled
@@ -3189,7 +3188,7 @@ end
 						local tbl9 = {}
 
 						while tbl.autoQTEEnabled do
-							if fn12("Mingle") then
+							if isCurrentGame("Mingle") then
 								local v5 = fn15()
 
 								if v5 and v5.ActiveButtons then
@@ -3199,7 +3198,7 @@ end
 										if activeButton then
 											tbl9[k] = true
 
-											if tbl.autoQTEEnabled and fn12("Mingle") and v5.ActiveButtons and v5.ActiveButtons[k] then
+											if tbl.autoQTEEnabled and isCurrentGame("Mingle") and v5.ActiveButtons and v5.ActiveButtons[k] then
 												pcall(function()
 													v5.Pressed(false, v5.ActiveButtons[k])
 												end)
@@ -3275,7 +3274,7 @@ end
 			end
 
 			table.insert(tbl9, animator.AnimationPlayed:Connect(function(arg2)
-				if tbl.antiChokeEnabled and fn12("Mingle") then
+				if tbl.antiChokeEnabled and isCurrentGame("Mingle") then
 					if string.find(arg2.Animation and arg2.Animation.AnimationId or "", "71318091779666") then
 						if fn18() then
 							local humanoidRootPart = arg:FindFirstChild("HumanoidRootPart")
@@ -3291,7 +3290,7 @@ end
 
 									if flag4 and humanoidRootPart then
 										humanoidRootPart.CFrame = cFrame
-										fn13(" Auto Kick", "Choke Finished Teleporting Back")
+										fn13(" 自动挣脱", "被掐结束后传送回来")
 									end
 
 									if connection2 then
@@ -3302,7 +3301,7 @@ end
 								if not flag3 and humanoidRootPart then
 									flag4 = true
 									humanoidRootPart.CFrame = CFrame.new(199, 54, -88)
-									fn13(" Grab Teleport", "Teleported away from the grab")
+									fn13(" 被抓传送", "已传送离开抓取")
 								end
 							end
 						end
@@ -3312,7 +3311,7 @@ end
 		end
 
 		tbl7.MingleBox:Toggle({
-			Title = "Grab Teleport",
+			Title = "被抓传送",
 			Default = false,
 			Callback = function(antiChokeEnabled)
 				tbl.antiChokeEnabled = antiChokeEnabled
@@ -3344,7 +3343,7 @@ end
 	local connection2 = nil
 
 	tbl7.MingleBox:Toggle({
-		Title = "Anti Slow",
+		Title = "防减速",
 		Default = false,
 		Callback = function(mingleAntiSlowEnabled)
 			tbl.mingleAntiSlowEnabled = mingleAntiSlowEnabled
@@ -3357,7 +3356,7 @@ end
 				local tbl10 = { "Stun", "Freeze", "Slowed", "Action", "Ragdoll" }
 
 				connection2 = game:GetService("RunService").Heartbeat:Connect(function()
-					if not fn12("Mingle") then
+					if not isCurrentGame("Mingle") then
 						return
 					end
 
@@ -3436,7 +3435,7 @@ end
 	})
 
 	tbl7.MingleBox:Toggle({
-		Title = "LG Power Hold",
+		Title = "雷电神抓取",
 		Default = false,
 		Callback = function(arg)
 			if arg then
@@ -4003,7 +4002,7 @@ end
 				v5 = nil
 
 				for _, child in pairs(live:GetChildren()) do
-					if child.Name:match("Rebel") or child.Name:match("Guard") then
+					if child.Name:match("Rebel") or child.Name:match("CanKill") then
 						local humanoidRootPart2 = child:FindFirstChild("HumanoidRootPart")
 						local humanoid = child:FindFirstChild("Humanoid")
 
@@ -4069,7 +4068,7 @@ end
 		tbl7.RebelBox = tbl6.Rebel:Section({ Opened = true, Title = "| Rebel", Icon = "target" })
 
 		tbl7.RebelBox:Toggle({
-			Title = "Auto Shoot",
+			Title = "自动射击",
 			Locked = true,
 			Default = false,
 			Callback = function(autoShootEnabled)
@@ -4188,15 +4187,15 @@ end
 											if child:FindFirstChild("Enemy") or string.match(string.lower(child.Name), "peabert") then
 												flag4 = true
 											elseif attribute then
-												local guardCanKill = child:FindFirstChild("GuardCanKill") or humanoidRootPart2 and humanoidRootPart2:FindFirstChild("GuardCanKillLockOn")
+												local CanKillCanKill = child:FindFirstChild("CanKillCanKill") or humanoidRootPart2 and humanoidRootPart2:FindFirstChild("CanKillCanKillLockOn")
 												flag4 = false
 
-												if guardCanKill then
+												if CanKillCanKill then
 													flag4 = true
 												end
 											else
 												local playerFromCharacter = Players:GetPlayerFromCharacter(child)
-												local attribute2 = playerFromCharacter and playerFromCharacter ~= localPlayer and playerFromCharacter:GetAttribute("IsGuard") or child.Name:match("Rebel") or child.Name:match("Guard") or child:FindFirstChild("PlayerCanKill") or child:FindFirstChild("TypeOfGuard")
+												local attribute2 = playerFromCharacter and playerFromCharacter ~= localPlayer and playerFromCharacter:GetAttribute("IsGuard") or child.Name:match("Rebel") or child.Name:match("CanKill") or child:FindFirstChild("PlayerCanKill") or child:FindFirstChild("TypeOfCanKill")
 												flag4 = false
 
 												if attribute2 then
@@ -4204,13 +4203,13 @@ end
 												end
 											end
 
-											local typeOfGuard = attribute and child:FindFirstChild("TypeOfGuard")
+											local typeOfCanKill = attribute and child:FindFirstChild("TypeOfCanKill")
 
-											if typeOfGuard then
-												typeOfGuard = not (humanoidRootPart2 and humanoidRootPart2:FindFirstChild("GuardCanKillLockOn"))
+											if typeOfCanKill then
+												typeOfCanKill = not (humanoidRootPart2 and humanoidRootPart2:FindFirstChild("CanKillCanKillLockOn"))
 											end
 
-											if typeOfGuard and not child:FindFirstChild("GuardCanKill") then
+											if typeOfCanKill and not child:FindFirstChild("CanKillCanKill") then
 												flag4 = false
 											end
 
@@ -4242,7 +4241,7 @@ end
 	end
 
 	tbl7.RebelBox:Toggle({
-		Title = "Silent Aim",
+		Title = "静默自瞄",
 		Default = false,
 		Callback = function(silentAimEnabled)
 			tbl.silentAimEnabled = silentAimEnabled
@@ -4268,7 +4267,7 @@ end
 				modules = modules and modules:FindFirstChild("GunFunctions")
 
 				if modules then
-					local module = require(modules)
+					local module = require(module)
 
 					if module and module.GetBuffs then
 						getBuffs = module.GetBuffs
@@ -4302,7 +4301,7 @@ end
 		end
 
 		tbl7.RebelBox:Toggle({
-			Title = "No Recoil & Spread",
+			Title = "无后坐力",
 			Default = false,
 			Callback = function(noRecoilSpreadEnabled)
 				tbl.noRecoilSpreadEnabled = noRecoilSpreadEnabled
@@ -4314,7 +4313,7 @@ end
 		})
 
 		tbl7.RebelBox:Toggle({
-			Title = "Rapid Fire",
+			Title = "快速射击",
 			Default = false,
 			Callback = function(rapidFireEnabled)
 				tbl.rapidFireEnabled = rapidFireEnabled
@@ -4329,7 +4328,7 @@ end
 	local connection3 = nil
 
 	tbl7.RebelBox:Toggle({
-		Title = "Infinite Ammo",
+		Title = "无限弹药",
 		Default = false,
 		Callback = function(infiniteAmmoRebelEnabled)
 			tbl.infiniteAmmoRebelEnabled = infiniteAmmoRebelEnabled
@@ -4382,7 +4381,7 @@ end
 	tbl7.SkyBox = tbl6.Sky:Section({ Opened = true, Title = "| Sky Squid Game", Icon = "cloud" })
 
 	tbl7.SkyBox:Toggle({
-		Title = "Sky Squid Game Anti Fall",
+		Title = "天空鱿鱼防掉落",
 		Default = false,
 		Callback = function(skyAntiFallEnabled)
 			tbl.skyAntiFallEnabled = skyAntiFallEnabled
@@ -4395,7 +4394,7 @@ end
 
 				task.spawn(function()
 					while tbl2.skyAntiFallThread and tbl.skyAntiFallEnabled do
-						if fn12("SkySquidGame") or fn12("SquidGame") then
+						if isCurrentGame("SkySquidGame") or isCurrentGame("SquidGame") then
 							if not workspace:FindFirstChild("SkyAntiFallPlatform") then
 								local vector = Vector3.new(91, 957, 251)
 								local vector2 = Vector3.new(-70, 958, -107)
@@ -4442,7 +4441,7 @@ end
 	local connection4 = nil
 
 	tbl7.SkyBox:Toggle({
-		Title = "Anti Freeze While Fight",
+		Title = "战斗中防冻结",
 		Default = false,
 		Callback = function(antiFreezeFightEnabled)
 			tbl.antiFreezeFightEnabled = antiFreezeFightEnabled
@@ -4455,7 +4454,7 @@ end
 				local tbl10 = { "Stun", "Freeze", "Slowed", "Action", "Ragdoll" }
 
 				connection4 = game:GetService("RunService").Heartbeat:Connect(function()
-					if not (fn12("SkySquidGame") or fn12("SquidGame")) then
+					if not (isCurrentGame("SkySquidGame") or isCurrentGame("SquidGame")) then
 						return
 					end
 
@@ -4534,7 +4533,7 @@ end
 	})
 
 	tbl7.SkyBox:Toggle({
-		Title = "Auto QTE Event",
+		Title = "自动QTE事件",
 		Default = false,
 		Callback = function(skyAutoQTEEnabled)
 			tbl.skyAutoQTEEnabled = skyAutoQTEEnabled
@@ -4544,7 +4543,7 @@ end
 					local tbl9 = {}
 
 					while tbl.skyAutoQTEEnabled do
-						if fn12("SkySquidGame") or fn12("SquidGame") then
+						if isCurrentGame("SkySquidGame") or isCurrentGame("SquidGame") then
 							local v5 = fn15()
 
 							if v5 and v5.ActiveButtons then
@@ -4552,7 +4551,7 @@ end
 									if not tbl9[k] and activeButton then
 										tbl9[k] = true
 
-										if tbl.skyAutoQTEEnabled and (fn12("SkySquidGame") or fn12("SquidGame")) and v5.ActiveButtons and v5.ActiveButtons[k] then
+										if tbl.skyAutoQTEEnabled and (isCurrentGame("SkySquidGame") or isCurrentGame("SquidGame")) and v5.ActiveButtons and v5.ActiveButtons[k] then
 											pcall(function()
 												v5.Pressed(false, v5.ActiveButtons[k])
 											end)
@@ -4655,7 +4654,7 @@ end
 		end
 
 		tbl7.SkyBox:Toggle({
-			Title = "Throw Pole AIM",
+			Title = "投掷长杆自瞄",
 			Default = false,
 			Callback = function(throwPoleAimEnabled)
 				tbl.throwPoleAimEnabled = throwPoleAimEnabled
@@ -4678,7 +4677,7 @@ end
 							return
 						end
 
-						if not (fn12("SkySquidGame") or fn12("SquidGame")) then
+						if not (isCurrentGame("SkySquidGame") or isCurrentGame("SquidGame")) then
 							return
 						end
 						local character = localPlayer.Character
@@ -4715,7 +4714,7 @@ end
 	tbl7.SquidGameBox = tbl6.Sky:Section({ Opened = true, Title = "| Squid Game", Icon = "skull" })
 
 	tbl7.SquidGameBox:Toggle({
-		Title = "Kill Aura",
+		Title = "杀戮光环",
 		Default = false,
 		Callback = function(squidKillAuraEnabled)
 			tbl.squidKillAuraEnabled = squidKillAuraEnabled
@@ -4730,7 +4729,7 @@ end
 					local tbl9 = { ["96924216250322"] = true, ["116839849594540"] = true, ["123072675259257"] = true }
 
 					while tbl2.squidKillAuraThread and tbl.squidKillAuraEnabled do
-						if fn12("SquidGame") then
+						if isCurrentGame("SquidGame") then
 							local character = localPlayer.Character
 
 							if character and character:FindFirstChild("Humanoid") and character:FindFirstChild("HumanoidRootPart") and character.Humanoid.Health > 0 then
@@ -4938,7 +4937,7 @@ end
 		tbl7.MingleGlassBox = tbl6.MingleGlass:Section({ Opened = true, Title = "| Glass Bridge", Icon = "footprints" })
 
 		tbl7.MingleGlassBox:Toggle({
-			Title = "Glass Bridge ESP",
+			Title = "玻璃桥透视",
 			Default = false,
 			Callback = function(arg)
 				flag4 = arg
@@ -4954,7 +4953,7 @@ end
 		local connection5 = nil
 
 		tbl7.MingleGlassBox:Toggle({
-			Title = "Fake Safe Glass",
+			Title = "假安全玻璃",
 			Default = false,
 			Callback = function(arg)
 				flag5 = arg
@@ -4995,41 +4994,41 @@ end
 	tbl3.lastGlassTPTime = 0
 
 	tbl7.MingleGlassBox:Button({
-		Title = "TP To Start",
+		Title = "传送到起点",
 		Callback = function()
 			local lastGlassTPTime = tbl3.lastGlassTPTime
 
 			if tick() - lastGlassTPTime < 10 then
 				local lastGlassTPTime2 = tbl3.lastGlassTPTime
-				fn13(" Cooldown", "Please wait " .. math.ceil(10 - tick() - lastGlassTPTime2) .. "s before teleporting again.")
+				fn13(" 冷却", "请等待 " .. math.ceil(10 - tick() - lastGlassTPTime2) .. "秒后再传送")
 				return
 			end
 
-			if fn12("GlassBridge") then
+			if isCurrentGame("GlassBridge") then
 				fn17(CFrame.new(36, 521, -1533))
 				tbl3.lastGlassTPTime = tick()
 			else
-				fn13(nil, "Glass Bridge is not currently running.")
+				fn13(nil, "玻璃桥未运行")
 			end
 		end,
 	})
 
 	tbl7.MingleGlassBox:Button({
-		Title = "TP To End",
+		Title = "传送到终点",
 		Callback = function()
 			local lastGlassTPTime = tbl3.lastGlassTPTime
 
 			if tick() - lastGlassTPTime < 10 then
 				local lastGlassTPTime2 = tbl3.lastGlassTPTime
-				fn13(" Cooldown", "Please wait " .. math.ceil(10 - tick() - lastGlassTPTime2) .. "s before teleporting again.")
+				fn13(" 冷却", "请等待 " .. math.ceil(10 - tick() - lastGlassTPTime2) .. "秒后再传送")
 				return
 			end
 
-			if fn12("GlassBridge") then
+			if isCurrentGame("GlassBridge") then
 				fn17(CFrame.new(-204, 521, -1536))
 				tbl3.lastGlassTPTime = tick()
 			else
-				fn13(nil, "Glass Bridge is not currently running.")
+				fn13(nil, "玻璃桥未运行")
 			end
 		end,
 	})
@@ -5039,49 +5038,49 @@ end
 	tbl7.JumpBox = tbl6.MingleGlass:Section({ Opened = true, Title = "| Jump Rope", Icon = "activity" })
 
 	tbl7.JumpBox:Button({
-		Title = "Rope TP To Start",
+		Title = "Rope 传送到起点",
 		Callback = function()
 			local lastRopeTPTime = tbl3.lastRopeTPTime
 
 			if tick() - lastRopeTPTime < 10 then
 				local lastRopeTPTime2 = tbl3.lastRopeTPTime
-				fn13(" Cooldown", "Please wait " .. math.ceil(10 - tick() - lastRopeTPTime2) .. "s")
+				fn13(" 冷却", "请等待 " .. math.ceil(10 - tick() - lastRopeTPTime2) .. "s")
 				return
 			end
 
-			if fn12("JumpRope") then
+			if isCurrentGame("JumpRope") then
 				fn17(CFrame.new(616, 197, 921))
 				tbl3.lastRopeTPTime = tick()
 			else
-				fn13(nil, "Jump Rope is not running.")
+				fn13(nil, "跳绳未运行")
 			end
 		end,
 	})
 
 	tbl7.JumpBox:Button({
-		Title = "Rope TP To End",
+		Title = "Rope 传送到终点",
 		Callback = function()
 			local lastRopeTPTime = tbl3.lastRopeTPTime
 
 			if tick() - lastRopeTPTime < 10 then
 				local lastRopeTPTime2 = tbl3.lastRopeTPTime
-				fn13(" Cooldown", "Please wait " .. math.ceil(10 - tick() - lastRopeTPTime2) .. "s")
+				fn13(" 冷却", "请等待 " .. math.ceil(10 - tick() - lastRopeTPTime2) .. "s")
 				return
 			end
 
-			if fn12("JumpRope") then
+			if isCurrentGame("JumpRope") then
 				fn17(CFrame.new(734, 197, 921))
 				tbl3.lastRopeTPTime = tick()
 			else
-				fn13(nil, "Jump Rope is not running.")
+				fn13(nil, "跳绳未运行")
 			end
 		end,
 	})
 
 	tbl7.JumpBox:Button({
-		Title = "Delete Rope",
+		Title = "删除绳子",
 		Callback = function()
-			if fn12("JumpRope") then
+			if isCurrentGame("JumpRope") then
 				local effects = Workspace:FindFirstChild("Effects")
 
 				if effects then
@@ -5089,15 +5088,15 @@ end
 
 					if rope then
 						rope:Destroy()
-						fn13(" Success", "Rope deleted")
+						fn13(" 成功", "绳子已删除")
 					else
-						fn13(" Not Found", "Rope not found in Effects.")
+						fn13(" 未找到", "未找到绳子")
 					end
 				else
-					fn13(" Not Found", "Effects folder not found.")
+					fn13(" 未找到", "未找到 Effects 文件夹")
 				end
 			else
-				fn13(nil, "Jump Rope is not running.")
+				fn13(nil, "跳绳未运行")
 			end
 		end,
 	})
@@ -5107,7 +5106,7 @@ end
 		local part = nil
 
 		local function fn19()
-			if flag4 and fn12("JumpRope") then
+			if flag4 and isCurrentGame("JumpRope") then
 				if not part or not part.Parent then
 					part = Instance.new("Part")
 					part.Name = "AntiFallPlatform"
@@ -5152,10 +5151,10 @@ end
 	tbl7.DalgonaBox = tbl6.Dalgona:Section({ Opened = true, Title = "| Dalgona", Icon = "cookie" })
 
 	tbl7.DalgonaBox:Button({
-		Title = "Auto Complete Dalgona",
+		Title = "自动完成糖饼",
 		Callback = function()
-			if not fn12("Dalgona") then
-				fn13(nil, "Dalgona is not currently running.")
+			if not isCurrentGame("Dalgona") then
+				fn13(nil, "糖饼未运行")
 				return
 			end
 
@@ -5315,7 +5314,7 @@ end
 						end
 
 						fn19(character)
-						dalgonatemprempte:FireServer({ Success = true })
+						dalgonatemprempte:FireServer({ 成功 = true })
 						task.wait(2)
 
 						for _, v10 in pairs({ v6, v7, v8, v9, progressBar }) do
@@ -5386,16 +5385,16 @@ end
 
 				local function fn23()
 					if v5.Character and v5.Character:FindFirstChild("Remotes") then
-						local remotes = v5.Character:FindFirstChild("Remotes")
+						local Remotes = v5.Character:FindFirstChild("Remotes")
 
 						pcall(function()
-							remotes.Disabled = true
+							Remotes.Disabled = true
 						end)
 
 						task.wait(0.5)
 
 						pcall(function()
-							remotes.Disabled = false
+							Remotes.Disabled = false
 						end)
 					end
 				end
@@ -5405,7 +5404,7 @@ end
 					return
 				end
 				dalgonatemprempte:FireServer({ Completed = true })
-				dalgonatemprempte:FireServer({ Success = true })
+				dalgonatemprempte:FireServer({ 成功 = true })
 				fn22()
 				fn23()
 
@@ -5415,7 +5414,7 @@ end
 						fn21()
 					until not ReplicatedStorage:WaitForChild("Remotes"):FindFirstChild("DALGONATEMPREMPTE")
 
-					fn13(nil, "Dalgona Completed")
+					fn13(nil, "糖饼已完成")
 
 					task.spawn(function()
 						local n2 = tick() + 10
@@ -5477,7 +5476,7 @@ end
 		end
 
 		tbl7.DalgonaBox:Toggle({
-			Title = "One Click Complete",
+			Title = "一键完成",
 			Default = false,
 			Callback = function(oneClickDalgonaEnabled)
 				tbl.oneClickDalgonaEnabled = oneClickDalgonaEnabled
@@ -5489,7 +5488,7 @@ end
 								return
 							end
 
-							if not fn12("Dalgona") then
+							if not isCurrentGame("Dalgona") then
 								if next(tbl9) then
 									fn20()
 								end
@@ -5537,7 +5536,7 @@ end
 	end
 
 	tbl7.DalgonaBox:Toggle({
-		Title = "Free Lighter",
+		Title = "免费打火机",
 		Default = false,
 		Callback = function(arg)
 			if arg then
@@ -5552,7 +5551,7 @@ end
 	local thread = nil
 
 	tbl7.DalgonaBox:Toggle({
-		Title = "Auto Relax",
+		Title = "自动放松",
 		Default = false,
 		Callback = function(autoRelaxEnabled)
 			tbl.autoRelaxEnabled = autoRelaxEnabled
@@ -5562,7 +5561,7 @@ end
 					tbl3.lastRelaxTime = 0
 
 					while tbl.autoRelaxEnabled do
-						if fn12("Dalgona") then
+						if isCurrentGame("Dalgona") then
 							local flag4 = getStressLevel() > 0
 
 							if flag4 then
@@ -5589,7 +5588,7 @@ end
 	tbl2.dalgonaQteThread = nil
 
 	tbl7.DalgonaBox:Toggle({
-		Title = "Auto QTE Event (Dalgona)",
+		Title = "自动QTE事件 (Dalgona)",
 		Default = false,
 		Callback = function(dalgonaQteEnabled)
 			tbl.dalgonaQteEnabled = dalgonaQteEnabled
@@ -5599,7 +5598,7 @@ end
 					local tbl9 = {}
 
 					while tbl.dalgonaQteEnabled do
-						if fn12("Dalgona") then
+						if isCurrentGame("Dalgona") then
 							local v5 = fn15()
 
 							if v5 and v5.ActiveButtons then
@@ -5608,7 +5607,7 @@ end
 										tbl9[k] = true
 
 										task.delay(0.01, function()
-											if tbl.dalgonaQteEnabled and fn12("Dalgona") and v5.ActiveButtons and v5.ActiveButtons[k] then
+											if tbl.dalgonaQteEnabled and isCurrentGame("Dalgona") and v5.ActiveButtons and v5.ActiveButtons[k] then
 												pcall(function()
 													v5.Pressed(false, v5.ActiveButtons[k])
 												end)
@@ -5639,10 +5638,10 @@ end
 	tbl7.PentathlonBox = tbl6.Dalgona:Section({ Opened = true, Title = "| Pentathlon", Icon = "swords" })
 
 	tbl7.PentathlonBox:Button({
-		Title = "Auto Complete Ddakji",
+		Title = "自动完成打纸片",
 		Callback = function()
 			if not guid then
-				fn13(nil, "Pentathlon is not currently running.")
+				fn13(nil, "五项未运行")
 				return
 			end
 			local currentCamera = Workspace.CurrentCamera
@@ -5651,8 +5650,8 @@ end
 			local v5 = currentCamera:ViewportPointToRay(viewportSize.X * 0.5, viewportSize.Y * 0.5)
 			local raycastParams = RaycastParams.new()
 			raycastParams.FilterType = Enum.RaycastFilterType.Include
-			local pentathlonMap = Workspace:FindFirstChild("PentathlonMap")
-			raycastParams.FilterDescendantsInstances = pentathlonMap and { pentathlonMap } or {}
+			local PentathlonMap = Workspace:FindFirstChild("PentathlonMap")
+			raycastParams.FilterDescendantsInstances = PentathlonMap and { PentathlonMap } or {}
 			local hit = Workspace:Raycast(v5.Origin, v5.Direction * 500, raycastParams)
 
 			if hit and hit.Position then
@@ -5660,18 +5659,18 @@ end
 			end
 
 			if fn16("Thrown", { Power = 1, Position = n2 }) then
-				fn13("Pentathlon", "Ddakji Completed")
+				fn13("Pentathlon", "打纸片完成")
 			else
-				fn13(" Error", "Wait for game to start")
+				fn13(" 错误", "等待游戏开始")
 			end
 		end,
 	})
 
 	tbl7.PentathlonBox:Button({
-		Title = "Auto Complete Flying Stone",
+		Title = "自动完成飞石",
 		Callback = function()
 			if not guid then
-				fn13(nil, "Pentathlon is not currently running.")
+				fn13(nil, "五项未运行")
 				return
 			end
 			local character = localPlayer.Character
@@ -5696,19 +5695,19 @@ end
 					ThrowPower = "Perfect",
 					Origin = n2,
 				}) then
-					fn13("Pentathlon", "Flying Stone Completed")
+					fn13("Pentathlon", "飞石完成")
 				else
-					fn13(" Error", "Wait for game to start")
+					fn13(" 错误", "等待游戏开始")
 				end
 			end
 		end,
 	})
 
 	tbl7.PentathlonBox:Button({
-		Title = "Auto Gonggi (Spam This)",
+		Title = "自动抓石子(狂点)",
 		Callback = function()
 			if not guid then
-				fn13(nil, "Pentathlon is not currently running.")
+				fn13(nil, "五项未运行")
 				return
 			end
 
@@ -5764,19 +5763,19 @@ end
 				end)
 
 				if flag4 then
-					fn13("Pentathlon", "Gonggi Part Got Completed")
+					fn13("Pentathlon", "抓石子完成")
 				else
-					fn13(" Error", "Check if game started")
+					fn13(" 错误", "检查游戏是否开始")
 				end
 			end)
 		end,
 	})
 
 	tbl7.PentathlonBox:Button({
-		Title = "Auto Complete Spinning Top",
+		Title = "自动完成陀螺",
 		Callback = function()
 			if not guid then
-				fn13(nil, "Pentathlon is not currently running.")
+				fn13(nil, "五项未运行")
 				return
 			end
 
@@ -5785,19 +5784,19 @@ end
 				task.wait(0.01)
 
 				if fn16("Thrown", {}) then
-					fn13("Pentathlon", "Spinning Top Completed")
+					fn13("Pentathlon", "陀螺完成")
 				else
-					fn13(" Error", "Wait for game to start")
+					fn13(" 错误", "等待游戏开始")
 				end
 			end)
 		end,
 	})
 
 	tbl7.PentathlonBox:Button({
-		Title = "Auto Complete Jegi",
+		Title = "自动完成踢毽子",
 		Callback = function()
 			if not guid then
-				fn13(nil, "Pentathlon is not currently running.")
+				fn13(nil, "五项未运行")
 				return
 			end
 
@@ -5810,9 +5809,9 @@ end
 				end
 
 				if flag4 then
-					fn13("Pentathlon", "Jegi Completed")
+					fn13("Pentathlon", "踢毽子完成")
 				else
-					fn13(" Error", "Wait for game to start")
+					fn13(" 错误", "等待游戏开始")
 				end
 			end)
 		end,
@@ -5918,7 +5917,7 @@ end
 			table.clear(tbl11)
 		end
 
-		tbl3.lastUtilitiesTPTime = 0
+		tbl3.last实用工具TPTime = 0
 
 		local function fn23(parent, arg)
 			local attachment = Instance.new("Attachment")
@@ -6372,12 +6371,12 @@ end
 		fn = function(arg)
 			if arg then
 				if flag4 then
-					fn13(nil, "Phantom Step is already activated!")
+					fn13(nil, "幻影步已激活！")
 					return
 				end
 				tbl.customPhantomEnabled = true
 				n2 = 2
-				fn13(nil, "Phantom Step Activated PC Keybind Q")
+				fn13(nil, "幻影步已激活 按键 Q")
 				flag4 = true
 
 				local function fn24()
@@ -6447,7 +6446,7 @@ end
 								return
 							end
 
-							if fn12("TugOfWar") then
+							if isCurrentGame("TugOfWar") then
 								return
 							end
 							n2 -= 1
@@ -6669,15 +6668,15 @@ end
 
 				flag4 = nil
 				tbl.customPhantomEnabled = false
-				fn13(nil, "Phantom Step Deactivated")
+				fn13(nil, "幻影步已关闭")
 			end
 		end
 
-		tbl7.TeleportBox = tbl6.Utilities:Section({ Opened = true, Title = "| Teleport", Icon = "navigation" })
-		tbl7.UtilitiesBox = tbl6.Utilities:Section({ Opened = true, Title = "| Utilities", Icon = "wrench" })
+		tbl7.TeleportBox = tbl6.Utility:Section({ Opened = true, Title = "| 传送", Icon = "navigation" })
+		tbl7.UtilityBox = tbl6.Utility:Section({ Opened = true, Title = "| 实用工具", Icon = "wrench" })
 
-		tbl7.UtilitiesBox:Toggle({
-			Title = "Free Phantom Step",
+		tbl7.UtilityBox:Toggle({
+			Title = "免费幻影步",
 			Default = false,
 			Callback = function(arg)
 				if fn then
@@ -6689,7 +6688,7 @@ end
 		local str3 = ""
 
 		tbl7.TeleportBox:Button({
-			Title = "Refresh Player List",
+			Title = "刷新玩家列表",
 			Callback = function()
 				fn19()
 
@@ -6706,37 +6705,37 @@ end
 			Values = tbl9,
 			Default = 1,
 			Multi = false,
-			Title = "Select Player",
+			Title = "选择玩家",
 		})
 
 		tbl7.TeleportBox:Button({
-			Title = "Teleport to Player",
+			Title = "传送到玩家",
 			Callback = function()
 				fn19()
 				local v5 = str3
 				if not v5 or v5 == "" then
-					fn13(" Error", "Select a player first")
+					fn13(" 错误", "请先选择玩家")
 					return
 				end
 				local v6 = Players:FindFirstChild(v5)
 
 				if v6 and v6.Character and v6.Character:FindFirstChild("HumanoidRootPart") then
 					fn17(v6.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 3))
-					fn13(" Teleported", "Teleported to " .. v5)
+					fn13(" 已传送", "已传送到 " .. v5)
 				else
-					fn13(" Error", "Player not found or has no character")
+					fn13(" 错误", "未找到玩家或玩家无角色")
 				end
 			end,
 		})
 
 		tbl7.TeleportBox:Button({
-			Title = "Teleport 100 Stud Up",
+			Title = "向上传送100格",
 			Callback = function()
-				local lastUtilitiesTPTime = tbl3.lastUtilitiesTPTime
+				local last实用工具TPTime = tbl3.last实用工具TPTime
 
-				if tick() - lastUtilitiesTPTime < 10 then
-					local lastUtilitiesTPTime2 = tbl3.lastUtilitiesTPTime
-					fn13(nil, "Please wait before teleporting again (" .. math.ceil(10 - tick() - lastUtilitiesTPTime2) .. "s)")
+				if tick() - last实用工具TPTime < 10 then
+					local last实用工具TPTime2 = tbl3.last实用工具TPTime
+					fn13(nil, "请等待 秒后再传送 (" .. math.ceil(10 - tick() - last实用工具TPTime2) .. "秒)")
 					return
 				end
 
@@ -6744,20 +6743,20 @@ end
 
 				if character and character:FindFirstChild("HumanoidRootPart") then
 					character.HumanoidRootPart.CFrame = character.HumanoidRootPart.CFrame * CFrame.new(0, 100, 0)
-					tbl3.lastUtilitiesTPTime = tick()
-					fn13(nil, "Successfully Teleported 100 Stud Up")
+					tbl3.last实用工具TPTime = tick()
+					fn13(nil, "成功向上传送100格")
 				end
 			end,
 		})
 
 		tbl7.TeleportBox:Button({
-			Title = "Teleport 50 Stud Down",
+			Title = "向下传送50格",
 			Callback = function()
-				local lastUtilitiesTPTime = tbl3.lastUtilitiesTPTime
+				local last实用工具TPTime = tbl3.last实用工具TPTime
 
-				if tick() - lastUtilitiesTPTime < 10 then
-					local lastUtilitiesTPTime2 = tbl3.lastUtilitiesTPTime
-					fn13(nil, "Please wait before teleporting again (" .. math.ceil(10 - tick() - lastUtilitiesTPTime2) .. "s)")
+				if tick() - last实用工具TPTime < 10 then
+					local last实用工具TPTime2 = tbl3.last实用工具TPTime
+					fn13(nil, "请等待 秒后再传送 (" .. math.ceil(10 - tick() - last实用工具TPTime2) .. "秒)")
 					return
 				end
 
@@ -6765,8 +6764,8 @@ end
 
 				if character and character:FindFirstChild("HumanoidRootPart") then
 					character.HumanoidRootPart.CFrame = character.HumanoidRootPart.CFrame * CFrame.new(0, -50, 0)
-					tbl3.lastUtilitiesTPTime = tick()
-					fn13(nil, "Successfully Teleported 50 Stud Down")
+					tbl3.last实用工具TPTime = tick()
+					fn13(nil, "成功向下传送50格")
 				end
 			end,
 		})
@@ -6775,7 +6774,7 @@ end
 		tbl2.allGamesQTEThread = nil
 
 		tbl7.GameToolsBox:Toggle({
-			Title = "Auto QTE Event (All Games)",
+			Title = "自动QTE事件 (All Game秒)",
 			Default = false,
 			Callback = function(allGamesAutoQTEEnabled)
 				tbl.allGamesAutoQTEEnabled = allGamesAutoQTEEnabled
@@ -6821,7 +6820,7 @@ end
 		})
 
 		tbl7.GameToolsBox:Toggle({
-			Title = "ESP Powers",
+			Title = "透视能力",
 			Default = false,
 			Callback = function(espPowersEnabled)
 				tbl.espPowersEnabled = espPowersEnabled
@@ -6904,7 +6903,7 @@ end
 		end)
 
 		tbl7.GameToolsBox:Toggle({
-			Title = "Peaberts ESP",
+			Title = "皮伯特透视",
 			Default = false,
 			Callback = function(peabertESPEnabled)
 				tbl.peabertESPEnabled = peabertESPEnabled
@@ -6926,10 +6925,10 @@ end
 		local n2 = 0
 
 		tbl7.GameToolsBox:Button({
-			Title = "TP To Peabert",
+			Title = "传送到皮伯特",
 			Callback = function()
 				if tick() - n2 < 10 then
-					fn13(" Cooldown", string.format("Wait %.1fs", 10 - tick() - n2))
+					fn13(" 冷却", string.format("等待 %.1f秒", 10 - tick() - n2))
 					return
 				end
 				local character = localPlayer.Character
@@ -6958,9 +6957,9 @@ end
 				if v5 then
 					fn17(v5.CFrame * CFrame.new(0, 0, 3))
 					n2 = tick()
-					fn13(" Teleported", "Teleported to Peabert!")
+					fn13(" 已传送", "已传送到皮伯特！")
 				else
-					fn13(" Error", "No Peaberts found on map!")
+					fn13(" 错误", "地图上未找到皮伯特！")
 				end
 			end,
 		})
@@ -6969,7 +6968,7 @@ end
 	local connection5 = nil
 
 	tbl7.GameToolsBox:Toggle({
-		Title = "Infinite Jump",
+		Title = "无限跳跃",
 		Default = false,
 		Callback = function(arg)
 			if arg then
@@ -6995,10 +6994,10 @@ end
 		end,
 	})
 
-	tbl7.PowerOptionsBox = tbl6.Visual:Section({ Opened = true, Title = "| Power Options", Icon = "zap" })
+	tbl7.PowerOptionsBox = tbl6.Visual:Section({ Opened = true, Title = "| 能力选项", Icon = "zap" })
 
 	tbl7.PowerOptionsBox:Toggle({
-		Title = "Visual Ultra Instinct",
+		Title = "视觉自在极意功",
 		Default = false,
 		Callback = function(arg)
 			if arg then
@@ -7021,8 +7020,8 @@ end
 
 				pcall(function()
 					SharedFunctions = require(ReplicatedStorage2.Modules.SharedFunctions)
-					Effects = require(ReplicatedStorage2.Modules.Effects)
-					UIDodgeCLIENTEFFECTS = require(ReplicatedStorage2.Modules.AbilityEffectsModules.UIDodgeCLIENTEFFECTS)
+                    Effects = require(ReplicatedStorage2.Modules.Effects)
+                    UIDodgeCLIENTEFFECTS = require(ReplicatedStorage2.Modules.AbilityEffectsModules.UIDodgeCLIENTEFFECTS)
 				end)
 
 				local tbl9 = {
@@ -7374,7 +7373,7 @@ end
 	})
 
 	tbl7.PowerOptionsBox:Toggle({
-		Title = "Lightning God Awakening",
+		Title = "雷神觉醒",
 		Default = false,
 		Callback = function(arg)
 			if arg then
@@ -7672,7 +7671,7 @@ end
 
 						if backpack then
 							for _, child in ipairs(backpack:GetChildren()) do
-								if child.Name == "Awakening" or child.Name == "⚡ Lightning God Awakening" or child.Name == "Lightning God Awakening" then
+								if child.Name == "Awakening" or child.Name == "⚡ 雷神觉醒" or child.Name == "雷神觉醒" then
 									child:Destroy()
 								end
 							end
@@ -7710,7 +7709,7 @@ end
 		end,
 	})
 
-	tbl7.VisualGamepassBox = tbl6.Visual:Section({ Opened = true, Title = "| Gamepass Options", Icon = "credit-card" })
+	tbl7.VisualGamepassBox = tbl6.Visual:Section({ Opened = true, Title = "| 通行证选项", Icon = "credit-card" })
 
 	local function fn19(arg, arg2, arg3)
 		local connection6 = nil
@@ -7741,13 +7740,13 @@ end
 	fn19("VisualVIP", " Unlock VIP", "__OwnsVIPGamepass")
 	fn19("VisualLighter", " Unlock Lighter", "HasLighter")
 	fn19("Visual2X", " Unlock 2X Count", "__Owns2XVoteGamepass")
-	fn19("VisualGuard", " Unlock Guard Perm", "__OwnsPermGuard")
+	fn19("VisualCanKill", " Unlock CanKill Perm", "__OwnsPermCanKill")
 	fn19("VisualGlass", " Unlock Glass Vision", "__OwnsGlassManufacturerVision")
 	fn19("VisualPSPlus", " Unlock PS Plus", "__OwnsPSPlus")
-	fn19("VisualEmotes", " Unlock Emote Pages", "__OwnsEmotePages")
+	fn19("VisualEmotes", " Unlock 表情 Pages", "__OwnsEmotePages")
 	_G.UniformColorValue = Color3.fromRGB(255, 255, 255)
-	tbl7.VisualClientBox = tbl6.Visual:Section({ Opened = true, Title = "| Client Options", Icon = "monitor" })
-	tbl7.CombatBox = tbl6.Combat:Section({ Opened = true, Title = "| Combat Features", Icon = "crosshair" })
+	tbl7.VisualClientBox = tbl6.Visual:Section({ Opened = true, Title = "| 客户端选项", Icon = "monitor" })
+	tbl7.CombatBox = tbl6.Combat:Section({ Opened = true, Title = "| 战斗功能", Icon = "crosshair" })
 
 	do
 		local tbl9 = { Enabled = false, Speed = 32, Connection = nil, BodyVelocity = nil }
@@ -8067,7 +8066,7 @@ end
 		local u = Enum.KeyCode.U
 
 		tbl7.CombatBox:Keybind({
-			Title = "Fly Keybind",
+			Title = "飞行快捷键",
 			Value = "U",
 			Default = "U",
 			Callback = function(arg)
@@ -8096,7 +8095,7 @@ end
 		end)
 
 		v6 = tbl7.CombatBox:Toggle({
-			Title = "Fly",
+			Title = "飞行",
 			Default = false,
 			Callback = function(arg)
 				fn22(arg)
@@ -8111,7 +8110,7 @@ end
 		local tbl10 = { "Action", "LightAction", "Slowed", "Stun", "Freeze", "Ragdoll" }
 
 		tbl7.CombatBox:Toggle({
-			Title = "Anti Slow",
+			Title = "防减速",
 			Default = false,
 			Callback = function(arg)
 				flag4 = arg
@@ -8232,7 +8231,7 @@ end
 	end
 
 	tbl7.CombatBox:Toggle({
-		Title = "CamLock (Auto Games)",
+		Title = "相机锁定",
 		Default = false,
 		Callback = function(camLockEnabled)
 			_G.CamLockEnabled = camLockEnabled
@@ -8243,7 +8242,7 @@ end
 
 					task.spawn(function()
 						while _G.CamLockSearchThread do
-							if (fn12("LightsOut") or fn12("Mingle") or fn12("SkySquidGame") or fn12("SquidGame") or fn12("LastDinner")) and _G.CamLockEnabled then
+							if (isCurrentGame("LightsOut") or isCurrentGame("Mingle") or isCurrentGame("SkySquidGame") or isCurrentGame("SquidGame") or isCurrentGame("LastDinner")) and _G.CamLockEnabled then
 								camLockClosestPlayer = fn20()
 							else
 								camLockClosestPlayer = nil
@@ -8296,14 +8295,14 @@ end
 		end
 
 		tbl7.CombatBox:Toggle({
-			Title = "Desync",
+			Title = "网络不同步",
 			Locked = true,
 			Default = false,
 			Callback = function(arg)
 				if not pcall(function()
 					return raknet and raknet.add_send_hook
 				end) then
-					fn13("Combat", "Unsupported Executor")
+					fn13("战斗", "不支持的执行器")
 					return
 				end
 
@@ -8325,7 +8324,7 @@ end
 	end
 
 	tbl7.VisualClientBox:Toggle({
-		Title = "Set Uniform Skin",
+		Title = "设置统一皮肤",
 		Default = false,
 		Callback = function(setUniformSkinEnabled)
 			_G.SetUniformSkinEnabled = setUniformSkinEnabled
@@ -8339,7 +8338,7 @@ end
 
 	tbl7.VisualClientBox:Colorpicker({
 		Default = Color3.fromRGB(255, 255, 255),
-		Title = "Uniform Skin Color",
+		Title = "统一皮肤颜色",
 		Callback = function(uniformColorValue)
 			_G.UniformColorValue = uniformColorValue
 
@@ -8356,7 +8355,7 @@ end
 		Default = "456",
 		Numeric = true,
 		Finished = false,
-		Title = "Custom Player Number",
+		Title = "自定义玩家编号",
 		Tooltip = "Change your overhead/chat number (e.g. 456)",
 		Callback = function(arg)
 			_G.CustomPlayerNumber = tonumber(arg) or 456
@@ -8364,7 +8363,7 @@ end
 	})
 
 	tbl7.VisualClientBox:Toggle({
-		Title = "Enable Custom Tag",
+		Title = "启用自定义编号",
 		Default = false,
 		Callback = function(customPlayerNumberEnabled)
 			_G.CustomPlayerNumberEnabled = customPlayerNumberEnabled
@@ -8408,7 +8407,7 @@ end
 		Default = "100",
 		Numeric = true,
 		Finished = false,
-		Title = "Custom Wins",
+		Title = "自定义胜场",
 		Tooltip = "Change your visual total wins",
 		Callback = function(arg)
 			_G.CustomWinsValue = tonumber(arg) or 100
@@ -8416,7 +8415,7 @@ end
 	})
 
 	tbl7.VisualClientBox:Toggle({
-		Title = "Enable Custom Wins",
+		Title = "启用自定义胜场",
 		Default = false,
 		Callback = function(customWinsEnabled)
 			_G.CustomWinsEnabled = customWinsEnabled
@@ -8444,7 +8443,7 @@ end
 		Default = "10",
 		Numeric = true,
 		Finished = false,
-		Title = "Custom Win Streak",
+		Title = "自定义连胜",
 		Tooltip = "Change your visual win streak",
 		Callback = function(arg)
 			_G.CustomWinStreakValue = tonumber(arg) or 10
@@ -8452,7 +8451,7 @@ end
 	})
 
 	tbl7.VisualClientBox:Toggle({
-		Title = "Enable Custom Win Streak",
+		Title = "启用自定义连胜",
 		Default = false,
 		Callback = function(customWinStreakEnabled)
 			_G.CustomWinStreakEnabled = customWinStreakEnabled
@@ -8696,7 +8695,7 @@ end
 			end
 
 			flag4 = true
-			fn13("Emote", "Playing: " .. arg.Name)
+			fn13("表情", "正在播放: " .. arg.Name)
 		end
 
 		local tbl10 = {}
@@ -8705,10 +8704,10 @@ end
 			table.insert(tbl10, v7.Name)
 		end
 
-		tbl7.EmoteBox = tbl6.Visual:Section({ Opened = true, Title = "| Emote Player", Icon = "smile" })
+		tbl7.EmoteBox = tbl6.Visual:Section({ Opened = true, Title = "| 表情播放", Icon = "smile" })
 
 		tbl7.EmoteBox:Dropdown({
-			Title = "Select Emote",
+			Title = "选择表情",
 			Values = tbl10,
 			Default = tbl10[1],
 			Callback = function(arg)
@@ -8717,7 +8716,7 @@ end
 		})
 
 		tbl7.EmoteBox:Button({
-			Title = "Play Emote",
+			Title = "播放表情",
 			Callback = function()
 				for _, v7 in ipairs(tbl9) do
 					if v7.Name == name then
@@ -8729,10 +8728,10 @@ end
 		})
 
 		tbl7.EmoteBox:Button({
-			Title = "Stop Emote",
+			Title = "停止表情",
 			Callback = function()
 				fn21()
-				fn13("Emote", "Stopped emote")
+				fn13("表情", "已停止表情")
 			end,
 		})
 
@@ -8753,10 +8752,10 @@ end
 		end)
 	end
 
-	tbl7.RagebaitEmoteBox = tbl6.Visual:Section({ Opened = true, Title = "| Ragebait Emote", Icon = "flame" })
+	tbl7.TauntBox = tbl6.Visual:Section({ Opened = true, Title = "| 嘲讽表情", Icon = "flame" })
 
 	do
-		local str3 = "Rage Emote 1"
+		local str3 = "Rage 表情 1"
 		local v5 = nil
 		local flag4 = false
 
@@ -8789,16 +8788,16 @@ end
 			end
 			local animationId
 
-			if arg == "Rage Emote 1" then
+			if arg == "Rage 表情 1" then
 				animationId = "rbxassetid://83396620848313"
-			elseif arg == "Rage Emote 2" then
+			elseif arg == "Rage 表情 2" then
 				animationId = "rbxassetid://111293910946685"
-			elseif arg == "Rage Emote 3" then
+			elseif arg == "Rage 表情 3" then
 				animationId = "rbxassetid://129390844140095"
 			else
 				animationId = nil
 
-				if arg == "Rage Emote 4" then
+				if arg == "Rage 表情 4" then
 					animationId = "rbxassetid://72042024"
 				end
 			end
@@ -8817,10 +8816,10 @@ end
 			end
 		end
 
-		tbl7.RagebaitEmoteBox:Dropdown({
-			Title = "Select Rage Emote",
-			Values = { "Rage Emote 1", "Rage Emote 2", "Rage Emote 3", "Rage Emote 4" },
-			Default = "Rage Emote 1",
+		tbl7.TauntBox:Dropdown({
+			Title = "选择嘲讽表情",
+			Values = { "Rage 表情 1", "Rage 表情 2", "Rage 表情 3", "Rage 表情 4" },
+			Default = "Rage 表情 1",
 			Callback = function(arg)
 				str3 = arg
 
@@ -8830,15 +8829,15 @@ end
 			end,
 		})
 
-		tbl7.RagebaitEmoteBox:Button({
-			Title = "Start / Stop",
+		tbl7.TauntBox:Button({
+			Title = "开始 / 停止",
 			Callback = function()
 				if flag4 then
 					fn21()
-					fn13("Ragebait", "Emote stopped")
+					fn13("嘲讽", "表情已停止")
 				else
 					fn22(str3)
-					fn13("Ragebait", "Playing " .. tostring(str3))
+					fn13("嘲讽", "正在播放 " .. tostring(str3))
 				end
 			end,
 		})
@@ -8851,7 +8850,7 @@ end
 	tbl.fpsBoosterEnabled = false
 
 	tbl7.GameToolsBox:Toggle({
-		Title = "FPS Booster / Anti-Lag",
+		Title = "FPS增强",
 		Default = false,
 		Callback = function(fpsBoosterEnabled)
 			tbl.fpsBoosterEnabled = fpsBoosterEnabled
@@ -8899,38 +8898,38 @@ end
 	})
 
 	tbl2.autoVoteThread = false
-	tbl7.AutoVoteBox = tbl6.Tools:Section({ Opened = true, Title = "| Auto Vote", Icon = "check" })
+	tbl7.AutoVoteBox = tbl6.Tools:Section({ Opened = true, Title = "| 自动投票", Icon = "check" })
 
 	tbl7.AutoVoteBox:Dropdown({
 		Values = { "None", "Dalgona", "Pentathlon" },
 		Default = 1,
 		Multi = false,
-		Title = "Vote 1: Dalgona/Pentathlon",
+		Title = "投票1：糖饼/五项",
 	})
 
 	tbl7.AutoVoteBox:Dropdown({
 		Values = { "None", "Hide And Seek", "Tug Of War" },
 		Default = 1,
 		Multi = false,
-		Title = "Vote 2: Hide/Tug",
+		Title = "投票2：捉迷藏/拔河",
 	})
 
 	tbl7.AutoVoteBox:Dropdown({
 		Values = { "None", "Jump Rope", "Glass Bridge" },
 		Default = 1,
 		Multi = false,
-		Title = "Vote 3: Jump/Glass",
+		Title = "投票3：跳绳/玻璃桥",
 	})
 
 	tbl7.AutoVoteBox:Dropdown({
 		Values = { "None", "Continue", "Rebel" },
 		Default = 1,
 		Multi = false,
-		Title = "Vote 4: Rebel/Continue",
+		Title = "投票4：叛军/继续",
 	})
 
 	tbl7.AutoVoteBox:Toggle({
-		Title = "Enable Auto Vote",
+		Title = "启用自动投票",
 		Default = false,
 		Callback = function(autoVoteThread)
 			tbl2.autoVoteThread = autoVoteThread
@@ -9036,7 +9035,7 @@ end
 		end
 
 		local function fn23()
-			if fn12("RedLightGreenLight") then
+			if isCurrentGame("RedLightGreenLight") then
 				local playerGui = localPlayer:FindFirstChild("PlayerGui")
 
 				if playerGui then
@@ -9054,8 +9053,8 @@ end
 			return false
 		end
 
-		tbl7.UtilitiesBox:Toggle({
-			Title = "Auto Steal Bandages",
+		tbl7.UtilityBox:Toggle({
+			Title = "自动偷绷带",
 			Default = false,
 			Callback = function(arg)
 				flag4 = arg
@@ -9361,8 +9360,8 @@ end
 			table.insert(tbl12, connection7)
 		end
 
-		tbl7.UtilitiesBox:Toggle({
-			Title = "Anti Push/Ragdoll",
+		tbl7.UtilityBox:Toggle({
+			Title = "防推倒",
 			Default = false,
 			Callback = function(antiPushEnabled)
 				tbl.antiPushEnabled = antiPushEnabled
@@ -9392,8 +9391,8 @@ end
 	tbl.instantInteractEnabled = false
 	local connection6 = nil
 
-	tbl7.UtilitiesBox:Toggle({
-		Title = "Instant Interact",
+	tbl7.UtilityBox:Toggle({
+		Title = "瞬间交互",
 		Default = false,
 		Callback = function(instantInteractEnabled)
 			tbl.instantInteractEnabled = instantInteractEnabled
@@ -9412,7 +9411,7 @@ end
 	})
 
 	tbl7.GameToolsBox:Toggle({
-		Title = "Anti-AFK",
+		Title = "防挂机",
 		Default = false,
 		Callback = function(arg)
 			if arg then
@@ -9433,7 +9432,7 @@ end
 	})
 
 	tbl7.GameToolsBox:Toggle({
-		Title = "Bandage Helper",
+		Title = "绷带辅助",
 		Default = false,
 		Callback = function(arg)
 			if arg then
@@ -9658,21 +9657,21 @@ end
 			end
 		end
 
-		tbl7.LightsOutBox = tbl6.LightsOut:Section({ Opened = true, Title = "| Lights Out", Icon = "moon" })
+		tbl7.LightsOutBox = tbl6.LightsOut:Section({ Opened = true, Title = "| 熄灯", Icon = "moon" })
 
 		tbl7.LightsOutBox:Button({
-			Title = "TP To Roof",
+			Title = "传送到屋顶",
 			Callback = function()
-				if fn12("LightsOut") then
+				if isCurrentGame("LightsOut") then
 					local character = localPlayer.Character
 					character = character and character:FindFirstChild("HumanoidRootPart")
 
 					if character then
 						character.CFrame = CFrame.new(198, 145, -93)
-						fn13("Lights Out", "Teleported to roof")
+						fn13("熄灯", "已传送到屋顶")
 					end
 				else
-					fn13(nil, "Lights Out is not currently running.")
+					fn13(nil, "熄灯未运行")
 				end
 			end,
 		})
@@ -9691,7 +9690,7 @@ end
 
 					task.spawn(function()
 						while tbl.espLightsOutEnabled and flag4 do
-							if fn12("LightsOut") then
+							if isCurrentGame("LightsOut") then
 								fn21()
 							else
 								fn22()
@@ -9781,7 +9780,7 @@ end
 							return
 						end
 
-						if not fn12("LightsOut") then
+						if not isCurrentGame("LightsOut") then
 							return
 						end
 						local character = localPlayer.Character
@@ -9829,7 +9828,7 @@ end
 	tbl2.autoTPRoofUnder30Thread = nil
 
 	tbl7.LightsOutBox:Toggle({
-		Title = "Auto TP Roof Health Under 30",
+		Title = "血量低于30传送屋顶",
 		Default = false,
 		Callback = function(autoTPRoofUnder30Enabled)
 			tbl.autoTPRoofUnder30Enabled = autoTPRoofUnder30Enabled
@@ -9844,7 +9843,7 @@ end
 					local flag4 = false
 
 					while tbl2.autoTPRoofUnder30Thread and tbl.autoTPRoofUnder30Enabled do
-						if fn12("LightsOut") then
+						if isCurrentGame("LightsOut") then
 							local character = localPlayer.Character
 							local humanoid = character and character:FindFirstChild("Humanoid")
 							character = character and character:FindFirstChild("HumanoidRootPart")
@@ -9869,7 +9868,7 @@ end
 	})
 
 	tbl7.LightsOutBox:Toggle({
-		Title = "Full Bright",
+		Title = "全亮",
 		Default = false,
 		Callback = function(lightsOutFullBrightEnabled)
 			_G.LightsOutFullBrightEnabled = lightsOutFullBrightEnabled
@@ -9882,7 +9881,7 @@ end
 						_G.CachedBrightObjects = {}
 
 						local connection7 = workspace.DescendantAdded:Connect(function(descendant)
-							if _G.LightsOutFullBrightEnabled and fn12("LightsOut") then
+							if _G.LightsOutFullBrightEnabled and isCurrentGame("LightsOut") then
 								if descendant:IsA("Light") or descendant:IsA("BasePart") and descendant.Name == "ChangeColorLightsOut" then
 									table.insert(_G.CachedBrightObjects, descendant)
 								end
@@ -9892,7 +9891,7 @@ end
 						local flag4 = false
 
 						while _G.LightsOutFullBrightCacheThread do
-							local LightsOut = _G.LightsOutFullBrightEnabled and fn12("LightsOut")
+							local LightsOut = _G.LightsOutFullBrightEnabled and isCurrentGame("LightsOut")
 
 							if LightsOut and not flag4 then
 								table.clear(_G.CachedBrightObjects)
@@ -9934,7 +9933,7 @@ end
 
 				if not _G.LightsOutFullBrightRenderThread then
 					_G.LightsOutFullBrightRenderThread = game:GetService("RunService").RenderStepped:Connect(function()
-						if _G.LightsOutFullBrightEnabled and fn12("LightsOut") then
+						if _G.LightsOutFullBrightEnabled and isCurrentGame("LightsOut") then
 							local Lighting = game:GetService("Lighting")
 							Lighting.Ambient = Color3.fromRGB(150, 150, 150)
 							Lighting.OutdoorAmbient = Color3.fromRGB(150, 150, 150)
@@ -9990,30 +9989,30 @@ end
 		end,
 	})
 
-	tbl7.GuardBox = tbl6.Guard:Section({ Opened = true, Title = "| Guard Mode", Icon = "shield" })
+	tbl7.CanKillBox = tbl6.CanKill:Section({ Opened = true, Title = "| CanKill Mode", Icon = "shield" })
 
-	tbl7.GuardBox:Button({
-		Title = "Free Perm Guard",
+	tbl7.CanKillBox:Button({
+		Title = "免费永久CanKill",
 		Callback = function()
-			localPlayer:SetAttribute("__OwnsPermGuard", true)
-			fn13(" Guard", "Free Perm Guard Activated")
+			localPlayer:SetAttribute("__OwnsPermCanKill", true)
+			fn13(" CanKill", "免费永久CanKill已激活")
 		end,
 	})
 
-	tbl.guardQteEnabled = false
-	tbl2.guardQteThread = nil
+	tbl.CanKillQteEnabled = false
+	tbl2.CanKillQteThread = nil
 
-	tbl7.GuardBox:Toggle({
-		Title = "Auto QTE Event (Guard)",
+	tbl7.CanKillBox:Toggle({
+		Title = "自动QTE事件 (CanKill)",
 		Default = false,
-		Callback = function(guardQteEnabled)
-			tbl.guardQteEnabled = guardQteEnabled
+		Callback = function(CanKillQteEnabled)
+			tbl.CanKillQteEnabled = CanKillQteEnabled
 
-			if tbl.guardQteEnabled and not tbl2.guardQteThread then
-				tbl2.guardQteThread = task.spawn(function()
+			if tbl.CanKillQteEnabled and not tbl2.CanKillQteThread then
+				tbl2.CanKillQteThread = task.spawn(function()
 					local tbl9 = {}
 
-					while tbl.guardQteEnabled do
+					while tbl.CanKillQteEnabled do
 						if localPlayer:GetAttribute("IsGuard") then
 							local v5 = fn15()
 
@@ -10024,7 +10023,7 @@ end
 									if activeButton then
 										tbl9[k] = true
 
-										if tbl.guardQteEnabled and v5.ActiveButtons and v5.ActiveButtons[k] then
+										if tbl.CanKillQteEnabled and v5.ActiveButtons and v5.ActiveButtons[k] then
 											pcall(function()
 												v5.Pressed(false, v5.ActiveButtons[k])
 											end)
@@ -10045,7 +10044,7 @@ end
 						task.wait()
 					end
 
-					tbl2.guardQteThread = nil
+					tbl2.CanKillQteThread = nil
 				end)
 			end
 		end,
@@ -10085,8 +10084,8 @@ end
 		return nil
 	end
 
-	tbl7.GuardBox:Toggle({
-		Title = "Auto Shoot",
+	tbl7.CanKillBox:Toggle({
+		Title = "自动射击",
 		Locked = true,
 		Default = false,
 		Callback = function(autoKillRedArrowEnabled)
@@ -10112,11 +10111,11 @@ end
 									local humanoid = child:FindFirstChild("Humanoid")
 
 									if humanoidRootPart2 and humanoid and humanoid.Health > 0 and child ~= character then
-										local guardCanKillLockOn = humanoidRootPart2:FindFirstChild("GuardCanKillLockOn")
-										guardCanKillLockOn = guardCanKillLockOn and guardCanKillLockOn:IsA("BillboardGui")
+										local CanKillCanKillLockOn = humanoidRootPart2:FindFirstChild("CanKillCanKillLockOn")
+										CanKillCanKillLockOn = CanKillCanKillLockOn and CanKillCanKillLockOn:IsA("BillboardGui")
 										local flag4 = false
 
-										if guardCanKillLockOn then
+										if CanKillCanKillLockOn then
 											flag4 = true
 										end
 
@@ -10165,8 +10164,8 @@ end
 		end,
 	})
 
-	tbl7.GuardBox:Toggle({
-		Title = "Silent Aim",
+	tbl7.CanKillBox:Toggle({
+		Title = "静默自瞄",
 		Default = false,
 		Callback = function(silentAimEnabled)
 			tbl.silentAimEnabled = silentAimEnabled
@@ -10179,16 +10178,16 @@ end
 
 	local connection7 = nil
 
-	tbl7.GuardBox:Toggle({
-		Title = "Infinite Ammo",
+	tbl7.CanKillBox:Toggle({
+		Title = "无限弹药",
 		Default = false,
-		Callback = function(infiniteAmmoGuardEnabled)
-			tbl.infiniteAmmoGuardEnabled = infiniteAmmoGuardEnabled
+		Callback = function(infiniteAmmoCanKillEnabled)
+			tbl.infiniteAmmoCanKillEnabled = infiniteAmmoCanKillEnabled
 
-			if infiniteAmmoGuardEnabled then
+			if infiniteAmmoCanKillEnabled then
 				if not connection7 then
 					connection7 = game:GetService("RunService").RenderStepped:Connect(function()
-						if not tbl.infiniteAmmoGuardEnabled then
+						if not tbl.infiniteAmmoCanKillEnabled then
 							return
 						end
 
@@ -10259,12 +10258,12 @@ end
 	end
 
 	tbl3.lastAARLGLTPTime = 0
-	tbl7.AdminAbuseBox = tbl6.Tools:Section({ Opened = true, Title = "| Admin Abuse Tools", Icon = "terminal" })
+	tbl7.AdminAbuseBox = tbl6.Tools:Section({ Opened = true, Title = "| 管理员工具", Icon = "terminal" })
 
 	tbl7.AdminAbuseBox:Button({
-		Title = "RLGL TP Start",
+		Title = "红绿灯传送到起点",
 		Callback = function()
-			if not fn12("AdminAbuseRedLightGreenLight") then
+			if not isCurrentGame("AdminAbuseRedLightGreenLight") then
 				fn13(nil, "Admin Abuse RLGL is not currently running.")
 				return
 			end
@@ -10272,20 +10271,20 @@ end
 
 			if tick() - lastAARLGLTPTime < 10 then
 				local lastAARLGLTPTime2 = tbl3.lastAARLGLTPTime
-				fn13(nil, "Please wait before teleporting again (" .. math.ceil(10 - tick() - lastAARLGLTPTime2) .. "s)")
+				fn13(nil, "请等待 秒后再传送 (" .. math.ceil(10 - tick() - lastAARLGLTPTime2) .. "秒)")
 				return
 			end
 
 			fn17(CFrame.new(-1375, -30, 22))
 			tbl3.lastAARLGLTPTime = tick()
-			fn13(nil, "Teleported to Start")
+			fn13(nil, "已传送到起点")
 		end,
 	})
 
 	tbl7.AdminAbuseBox:Button({
-		Title = "RLGL TP End",
+		Title = "红绿灯传送到终点",
 		Callback = function()
-			if not fn12("AdminAbuseRedLightGreenLight") then
+			if not isCurrentGame("AdminAbuseRedLightGreenLight") then
 				fn13(nil, "Admin Abuse RLGL is not currently running.")
 				return
 			end
@@ -10293,18 +10292,18 @@ end
 
 			if tick() - lastAARLGLTPTime < 10 then
 				local lastAARLGLTPTime2 = tbl3.lastAARLGLTPTime
-				fn13(nil, "Please wait before teleporting again (" .. math.ceil(10 - tick() - lastAARLGLTPTime2) .. "s)")
+				fn13(nil, "请等待 秒后再传送 (" .. math.ceil(10 - tick() - lastAARLGLTPTime2) .. "秒)")
 				return
 			end
 
 			fn17(CFrame.new(-1361, -28, 701))
 			tbl3.lastAARLGLTPTime = tick()
-			fn13(nil, "Teleported to End")
+			fn13(nil, "已传送到终点")
 		end,
 	})
 
 	tbl7.AdminAbuseBox:Toggle({
-		Title = "Auto Shoot PBRS (AA)",
+		Title = "自动射击 PBRS (AA)",
 		Locked = true,
 		Default = false,
 		Callback = function(autoShootAAEnabled)
@@ -10392,7 +10391,7 @@ end
 	})
 
 	tbl7.AdminAbuseBox:Toggle({
-		Title = "Silent Aim",
+		Title = "静默自瞄",
 		Default = false,
 		Callback = function(silentAimEnabled)
 			tbl.silentAimEnabled = silentAimEnabled
@@ -10405,8 +10404,8 @@ end
 
 	local flag4 = false
 
-	tbl6.UISettings:Section({ Opened = true, Title = "Menu" }):Toggle({
-		Title = "Unlock Mouse When Menu Open",
+	tbl6.UISettings:Section({ Opened = true, Title = "菜单" }):Toggle({
+		Title = "菜单打开时解锁鼠标",
 		Default = false,
 		Callback = function(unlockMouseWhileOpen)
 			flag4 = unlockMouseWhileOpen
@@ -10460,7 +10459,7 @@ end
 	end)
 
 	do
-		local v5 = tbl6.UISettings:Section({ Opened = true, Title = "| Configuration", Icon = "settings" })
+		local v5 = tbl6.UISettings:Section({ Opened = true, Title = "| 配置", Icon = "settings" })
 
 		local function fn23()
 			pcall(function()
@@ -10473,9 +10472,9 @@ end
 					end
 				end
 
-				if v and v.GetCurrentTheme then
+				if v and v.GetCurrentThemeName then
 					pcall(function()
-						tbl9.__CurrentTheme = v:GetCurrentTheme()
+						tbl9.__CurrentThemeName = v:GetCurrentThemeName()
 					end)
 				end
 
@@ -10489,9 +10488,9 @@ end
 
 				if writefile then
 					writefile("UwuHub/config.json", HttpService2:JSONEncode(tbl9))
-					fn13("Config", "Configuration saved successfully!")
+					fn13("Config", "配置保存成功！")
 				else
-					fn13("Config", "Your executor does not support writefile!")
+					fn13("Config", "你的执行器不支持写文件！")
 				end
 			end)
 		end
@@ -10506,7 +10505,7 @@ end
 
 					if data and type(data) == "table" then
 						for k, v6 in pairs(data) do
-							if k ~= "__CurrentTheme" and k ~= "__DefaultTheme" then
+							if k ~= "__CurrentThemeName" and k ~= "__DefaultTheme" then
 								tbl[k] = v6
 
 								if tbl5[k] and tbl5[k].Set then
@@ -10521,18 +10520,18 @@ end
 							end
 						end
 
-						local defaultTheme = data.__DefaultTheme or data.__CurrentTheme
+						local DefaultTheme = data.__DefaultTheme or data.__CurrentThemeName
 
-						if defaultTheme and v and v.SetTheme then
+						if DefaultTheme and v and v.SetTheme then
 							pcall(function()
-								if v.Themes and v.Themes[defaultTheme] then
-									v:SetTheme(defaultTheme)
+								if v.Themes and v.Themes[DefaultTheme] then
+									v:SetTheme(DefaultTheme)
 								end
 
-								if defaultTheme == "Furina Genshin" then
+								if DefaultTheme == "Furina Genshin" then
 									fn5(true)
 									fn7(false)
-								elseif defaultTheme == "Closing Eyes" then
+								elseif DefaultTheme == "Closing Eyes" then
 									fn5(false)
 									fn7(true)
 								else
@@ -10546,30 +10545,30 @@ end
 							updateCustomCursor()
 						end
 
-						fn13("Config", "Configuration loaded successfully!")
+						fn13("Config", "配置加载成功！")
 					end
 				else
-					fn13("Config", "No saved config found!")
+					fn13("Config", "未找到保存的配置！")
 				end
 			end)
 		end
 
 		v5:Button({
-			Title = "Save Config",
+			Title = "保存配置",
 			Callback = function()
 				fn23()
 			end,
 		})
 
 		v5:Button({
-			Title = "Load Config",
+			Title = "加载配置",
 			Callback = function()
 				fn24()
 			end,
 		})
 
 		v5:Toggle({
-			Title = "Set Auto Load",
+			Title = "设置自动加载",
 			Default = false,
 			Callback = function(arg)
 				pcall(function()
@@ -10581,13 +10580,13 @@ end
 						writefile("UwuHub/autoload.txt", arg and "true" or "false")
 					end
 
-					fn13("Config", "Auto load set to " .. tostring(arg))
+					fn13("Config", "自动加载已设为 " .. tostring(arg))
 				end)
 			end,
 		})
 
 		v5:Keybind({
-			Title = "UI Toggle Keybind",
+			Title = "UI开关快捷键",
 			Default = "G",
 			Callback = function(toggleKey)
 				pcall(function()
@@ -10600,10 +10599,10 @@ end
 			end,
 		})
 
-		local v6 = tbl6.UISettings:Section({ Opened = true, Title = "| Theme Settings", Icon = "palette" })
+		local v6 = tbl6.UISettings:Section({ Opened = true, Title = "| 主题设置", Icon = "palette" })
 
 		v6:Dropdown({
-			Title = "Select Theme",
+			Title = "选择主题",
 			Values = {
 				"Dark",
 				"Cyberpunk",
@@ -10627,21 +10626,21 @@ end
 				"Closing Eyes",
 			},
 			Default = "Dark",
-			Callback = function(currentThemeName)
-				if not currentThemeName or type(currentThemeName) ~= "string" then
+			Callback = function(CurrentThemeNameName)
+				if not CurrentThemeNameName or type(CurrentThemeNameName) ~= "string" then
 					return
 				end
-				tbl.CurrentThemeName = currentThemeName
+				tbl.CurrentThemeNameName = CurrentThemeNameName
 
 				pcall(function()
-					if v and v.Themes and v.Themes[currentThemeName] then
-						v:SetTheme(currentThemeName)
+					if v and v.Themes and v.Themes[CurrentThemeNameName] then
+						v:SetTheme(CurrentThemeNameName)
 					end
 
-					if currentThemeName == "Furina Genshin" then
+					if CurrentThemeNameName == "Furina Genshin" then
 						fn5(true)
 						fn7(false)
-					elseif currentThemeName == "Closing Eyes" then
+					elseif CurrentThemeNameName == "Closing Eyes" then
 						fn5(false)
 						fn7(true)
 					else
@@ -10653,21 +10652,21 @@ end
 		})
 
 		v6:Button({
-			Title = "Set Current Theme as Default",
+			Title = "设为默认主题",
 			Callback = function()
 				pcall(function()
-					local currentTheme = v and v.GetCurrentTheme and v:GetCurrentTheme() or "Dark"
-					tbl.DefaultTheme = currentTheme
+					local CurrentThemeName = v and v.GetCurrentThemeName and v:GetCurrentThemeName() or "Dark"
+					tbl.DefaultTheme = CurrentThemeName
 
 					if isfolder and not isfolder("UwuHub") then
 						pcall(makefolder, "UwuHub")
 					end
 
 					if writefile then
-						writefile("UwuHub/default_theme.txt", currentTheme)
+						writefile("UwuHub/default_theme.txt", CurrentThemeName)
 					end
 
-					fn13("Theme", "Default theme set to: " .. tostring(currentTheme))
+					fn13("主题", "默认主题已设为: " .. tostring(CurrentThemeName))
 				end)
 			end,
 		})
@@ -10706,7 +10705,7 @@ end
 	end
 
 	do
-		local v5 = tbl6.UISettings:Section({ Opened = true, Title = "Custom Cursor" })
+		local v5 = tbl6.UISettings:Section({ Opened = true, Title = "自定义光标" })
 		tbl.customCursorEnabled = true
 		tbl.customCursorTextEnabled = true
 		tbl.customCursorRGBEnabled = true
@@ -10731,7 +10730,7 @@ end
 						local textLabel = Instance.new("TextLabel")
 						textLabel.Name = "CursorText"
 						textLabel.BackgroundTransparency = 1
-						textLabel.Text = "UwU"
+						textLabel.Text = "zy"
 						textLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 						textLabel.TextStrokeTransparency = 0
 						textLabel.Font = Enum.Font.GothamBold
@@ -10835,7 +10834,7 @@ end
 		end
 
 		v5:Toggle({
-			Title = "Disable RGB Effect",
+			Title = "关闭RGB效果",
 			Default = false,
 			Callback = function(arg)
 				tbl.customCursorRGBEnabled = not arg
@@ -10843,7 +10842,7 @@ end
 		})
 
 		v5:Toggle({
-			Title = "Enable Custom Cursor",
+			Title = "启用自定义光标",
 			Default = true,
 			Callback = function(customCursorEnabled)
 				tbl.customCursorEnabled = customCursorEnabled
@@ -10852,7 +10851,7 @@ end
 		})
 
 		v5:Toggle({
-			Title = "Under Cursor Text",
+			Title = "光标下方文字",
 			Default = true,
 			Callback = function(customCursorTextEnabled)
 				tbl.customCursorTextEnabled = customCursorTextEnabled
@@ -10876,7 +10875,7 @@ end
 					task.wait(1.5)
 
 					v:Notify({
-						Title = "Unsupported Executor",
+						Title = "不支持的执行器",
 						Content = "Please Use Better Executors For Better Experince",
 						Duration = 10,
 					})
@@ -10888,7 +10887,7 @@ end
 	pcall(function()
 		if v and v.Notify then
 			v:Notify({
-				Title = "Uwu Hub",
+				Title = "zy",
 				Content = "Please Showcase My Script On Tiktok or Somewhere",
 				Duration = 10,
 			})
@@ -10902,7 +10901,7 @@ end
 			if v and v.Notify then
 				v:Notify({
 					Title = "Warning",
-					Content = "GAME VERSION CHANGE DETECTED. Some features may be patched.",
+					Content = "游戏版本 CHANGE DETECTED. Some features may be patched.",
 					Duration = 10,
 				})
 			end
