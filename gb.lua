@@ -375,7 +375,7 @@ Library.Scheme = {
 
 local Window = Library:CreateWindow({
     Title = "zygb",
-    Footer = "Created by Liuye zy［Willow leaf］",
+    Footer = "Created by Liuye zy［Willow Leaf］",
     NotifySide = "Right",
     ShowCustomCursor = true,
     CornerRadius = 6,
