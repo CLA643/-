@@ -404,7 +404,7 @@ local Window = Library:CreateWindow({
 Window:SetBackgroundImage("https://chaton-images.s3.us-east-2.amazonaws.com/6nS2f4fBrUQJLAEGQlJwNB7ZI6uqZFOawHnD9DIyMzbY4g5DuDksrkhX8ioIPRrO_1826x1200x657016.jpeg")
 
 Library.IsMobile = true
-
+Library.Floats:ClearAllChildren()
 for _, child in Library.Floats:GetChildren() do
     if child:IsA("TextButton") then
         if child.Text == "Toggle" then
