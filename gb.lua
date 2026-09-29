@@ -9,7 +9,7 @@ if getgenv().zynbLoaded then
 end
 getgenv().zynbLoaded = true
 getgenv().zynbLoadedTime = os.clock()
-local __SkinHubLoadStart = tick()
+local __zygbLoadStart = tick()
 
 local HttpService = game:GetService("HttpService")
 local TeleportService = game:GetService("TeleportService")
@@ -19306,6 +19306,6 @@ end)
 
 game:GetService("StarterGui"):SetCore("SendNotification", {
     Title = "zygb",
-    Text = string.format("已加载，耗时 %.2f 秒", tick() - __SkinHubLoadStart),
+    Text = string.format("已加载，耗时 %.2f 秒", tick() - __zygbLoadStart),
     Duration = 5,
 })
