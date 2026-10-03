@@ -1060,17 +1060,9 @@ autTab:Slider({
     end
 })
 
--- ========== 技能自瞄 ==========
-local UserInputService = game:GetService("UserInputService")
-local Camera = Workspace.CurrentCamera
-
+-- ========== 技能自瞄（手机常驻版） ==========
 local SkillAimbotEnabled = false
-local SkillAimKey = Enum.KeyCode.Q   -- 技能键，按实际改
-local SkillIsHeld = false
-local SkillAimFOV = 150              -- 屏幕内锁定范围（像素）
-local SkillAimSmooth = 0.35          -- 平滑度，越大跟得越紧
 
--- 判断目标是否属于敌方阵营
 local function isEnemy(player)
     if player == LocalPlayer then return false end
     if not player.Team or not player.Character then return false end
@@ -1079,12 +1071,11 @@ local function isEnemy(player)
     return player.Team.Name == enemyTeam
 end
 
--- 找屏幕上离准心最近的敌人
 local function getSkillAimTarget()
     local cam = Workspace.CurrentCamera
     if not cam then return nil end
-    local mousePos = UserInputService:GetMouseLocation()
-    local closest, closestDist = nil, SkillAimFOV
+    local mousePos = game:GetService("UserInputService"):GetMouseLocation()
+    local closest, closestDist = nil, 99999
 
     for _, player in ipairs(Players:GetPlayers()) do
         if isEnemy(player) and isAlive(player) then
@@ -1104,29 +1095,13 @@ local function getSkillAimTarget()
     return closest
 end
 
--- 监听技能键
-trackConnection(UserInputService.InputBegan:Connect(function(input, gameProcessed)
-    if gameProcessed then return end
-    if input.KeyCode == SkillAimKey then
-        SkillIsHeld = true
-    end
-end))
-
-trackConnection(UserInputService.InputEnded:Connect(function(input)
-    if input.KeyCode == SkillAimKey then
-        SkillIsHeld = false
-    end
-end))
-
--- 只在按住技能键时锁头
 trackConnection(RunService.RenderStepped:Connect(function()
-    if not SkillAimbotEnabled or not SkillIsHeld then return end
+    if not SkillAimbotEnabled then return end
     local cam = Workspace.CurrentCamera
     if not cam then return end
     local target = getSkillAimTarget()
     if target then
-        local lookAt = CFrame.new(cam.CFrame.Position, target.Position)
-        cam.CFrame = cam.CFrame:Lerp(lookAt, SkillAimSmooth)
+        cam.CFrame = CFrame.new(cam.CFrame.Position, target.Position)
     end
 end))
 
@@ -1135,6 +1110,5 @@ autTab:Toggle({
     Value = false,
     Callback = function(state)
         SkillAimbotEnabled = state
-        if not state then SkillIsHeld = false end
     end
 })
